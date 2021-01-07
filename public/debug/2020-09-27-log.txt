@@ -1,0 +1,507 @@
+
+<------------------------------------------------------------------------
+2020-09-27 09:57:17
+商户交易信息：{"\/api\/plan\/activate_order":"","cur":"CNY","orderId":"795792","sign":"MHQJwyxcWMOTyypBSPmBycyoG8xhSTRNBE37Ep4VdpUo1NbdDbXgWrVMVrvXxWTrrVNF\/bgE9M\/R\nuF3gpV6J\/r5Kmy4G29nq\/4bPYlD\/8lI8\/42pYJU8Mlwz2MUs\/FAZZCNRVNGM6G\/f5a6p5eU+QPab\nuhDooDkaEtFrhYvX460=","amt":"1","txnRef":"795792","txnType":"SCP","terminalId":"29004199","shortPan":"0000","merchantId":"820290455320041","extData":"{\"orderType\":\"3\",\"payAmount\":\"\",\"cardType\":\"\",\"discountAmount\":\"\",\"issuerCode\":\"WX\",\"sn\":\"00004304P203D92D00254\",\"hashPan\":\"\",\"userId\":\"\",\"authRef\":\"\",\"authOrderNo\":\"\",\"sdpMerchant\":\"93744914\"}","txnTime":"20200922144247","respCode":"FF","merOrderId":"POS20201029112994"}
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 346
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 09:59:57
+商户交易信息：{"\/api\/plan\/activate_order":"","cur":"CNY","orderId":"795792","sign":"MHQJwyxcWMOTyypBSPmBycyoG8xhSTRNBE37Ep4VdpUo1NbdDbXgWrVMVrvXxWTrrVNF\/bgE9M\/R\nuF3gpV6J\/r5Kmy4G29nq\/4bPYlD\/8lI8\/42pYJU8Mlwz2MUs\/FAZZCNRVNGM6G\/f5a6p5eU+QPab\nuhDooDkaEtFrhYvX460=","amt":"22000","txnRef":"795792","txnType":"SCP","terminalId":"29004199","shortPan":"0000","merchantId":"820290455320041","extData":"{\"orderType\":\"3\",\"payAmount\":\"\",\"cardType\":\"\",\"discountAmount\":\"\",\"issuerCode\":\"WX\",\"sn\":\"00004304P203D92D00254\",\"hashPan\":\"\",\"userId\":\"\",\"authRef\":\"\",\"authOrderNo\":\"\",\"sdpMerchant\":\"93744914\"}","txnTime":"20200922144247","respCode":"FF","merOrderId":"POS20201029112994"}
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 346
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 09:59:57
+商户交易信息成功[1,1,1]
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 424
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 10:01:09
+商户交易信息：{"\/api\/plan\/activate_order":"","cur":"CNY","orderId":"795793","sign":"MHQJwyxcWMOTyypBSPmBycyoG8xhSTRNBE37Ep4VdpUo1NbdDbXgWrVMVrvXxWTrrVNF\/bgE9M\/R\nuF3gpV6J\/r5Kmy4G29nq\/4bPYlD\/8lI8\/42pYJU8Mlwz2MUs\/FAZZCNRVNGM6G\/f5a6p5eU+QPab\nuhDooDkaEtFrhYvX460=","amt":"22000","txnRef":"795792","txnType":"SCP","terminalId":"29004199","shortPan":"0000","merchantId":"820290455320041","extData":"{\"orderType\":\"3\",\"payAmount\":\"\",\"cardType\":\"\",\"discountAmount\":\"\",\"issuerCode\":\"WX\",\"sn\":\"00004304P203D92D00254\",\"hashPan\":\"\",\"userId\":\"\",\"authRef\":\"\",\"authOrderNo\":\"\",\"sdpMerchant\":\"93744914\"}","txnTime":"20200922144247","respCode":"FF","merOrderId":"POS20201029112994"}
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 346
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 10:01:09
+商户交易信息成功[1]
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 424
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 10:01:39
+商户交易信息：{"\/api\/plan\/activate_order":"","cur":"CNY","orderId":"795793","sign":"MHQJwyxcWMOTyypBSPmBycyoG8xhSTRNBE37Ep4VdpUo1NbdDbXgWrVMVrvXxWTrrVNF\/bgE9M\/R\nuF3gpV6J\/r5Kmy4G29nq\/4bPYlD\/8lI8\/42pYJU8Mlwz2MUs\/FAZZCNRVNGM6G\/f5a6p5eU+QPab\nuhDooDkaEtFrhYvX460=","amt":"22000","txnRef":"795792","txnType":"SCP","terminalId":"29004199","shortPan":"0000","merchantId":"820290455320041","extData":"{\"orderType\":\"3\",\"payAmount\":\"\",\"cardType\":\"\",\"discountAmount\":\"\",\"issuerCode\":\"WX\",\"sn\":\"00004304P203D92D00254\",\"hashPan\":\"\",\"userId\":\"\",\"authRef\":\"\",\"authOrderNo\":\"\",\"sdpMerchant\":\"93744914\"}","txnTime":"20200922144247","respCode":"FF","merOrderId":"POS20201029112994"}
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 346
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 10:01:39
+商户交易信息去重{"id":16086,"snNo":"00004304P203D92D00254","logNo":"795793","acDt":"0","txnCd":"SCP","crdTyp":"WX","txnTm":"20200922144247","ttxnSts":"FF","crdNo":"0000","crdFlg":null,"txnAmt":"220.0000","mercFeeAmt":"0.0000","businessThrAmt":"0.0000","trmNo":"29004199","batNo":null,"cseqNo":null,"mercId":"820290455320041","mercNm":null,"create_time":"2020-09-27 10:01:09","is_chuli":0,"update_time":null}
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 355
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:10:54
+商户交易信息：{"\/api\/plan\/activate_order":"","cur":"CNY","orderId":"795793","sign":"MHQJwyxcWMOTyypBSPmBycyoG8xhSTRNBE37Ep4VdpUo1NbdDbXgWrVMVrvXxWTrrVNF\/bgE9M\/R\nuF3gpV6J\/r5Kmy4G29nq\/4bPYlD\/8lI8\/42pYJU8Mlwz2MUs\/FAZZCNRVNGM6G\/f5a6p5eU+QPab\nuhDooDkaEtFrhYvX460=","amt":"22000","txnRef":"795792","txnType":"SCP","terminalId":"29004199","shortPan":"0000","merchantId":"820290455320041","extData":"{\"orderType\":\"3\",\"payAmount\":\"\",\"cardType\":\"\",\"discountAmount\":\"\",\"issuerCode\":\"WX\",\"sn\":\"00004304P203D92D00254\",\"hashPan\":\"\",\"userId\":\"\",\"authRef\":\"\",\"authOrderNo\":\"\",\"sdpMerchant\":\"93744914\"}","txnTime":"20200922144247","respCode":"FF","merOrderId":"POS20201029112994"}
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 346
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:10:54
+商户交易信息去重{"id":16086,"snNo":"00004304P203D92D00254","logNo":"795793","acDt":"0","txnCd":"SCP","crdTyp":"WX","txnTm":"20200922144247","ttxnSts":"FF","crdNo":"0000","crdFlg":null,"txnAmt":"220.0000","mercFeeAmt":"0.0000","businessThrAmt":"0.0000","trmNo":"29004199","batNo":null,"cseqNo":null,"mercId":"820290455320041","mercNm":null,"create_time":"2020-09-27 10:01:09","is_chuli":0,"update_time":null}
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 355
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:11:13
+商户交易信息：{"\/api\/plan\/activate_order":"","cur":"CNY","orderId":"795796","sign":"MHQJwyxcWMOTyypBSPmBycyoG8xhSTRNBE37Ep4VdpUo1NbdDbXgWrVMVrvXxWTrrVNF\/bgE9M\/RuF3gpV6J\/r5Kmy4G29nq\/4bPYlD\/8lI8\/42pYJU8Mlwz2MUs\/FAZZCNRVNGM6G\/f5a6p5eU QPabuhDooDkaEtFrhYvX460=","amt":"122000","txnRef":"795792","txnType":"SCP","terminalId":"29004199","shortPan":"0000","merchantId":"820290455320041","extData":"{\"orderType\":\"3\",\"payAmount\":\"\",\"cardType\":\"\",\"discountAmount\":\"\",\"issuerCode\":\"WX\",\"sn\":\"00004304P203D92D00254\",\"hashPan\":\"\",\"userId\":\"\",\"authRef\":\"\",\"authOrderNo\":\"\",\"sdpMerchant\":\"93744914\"}","txnTime":"20200922144247","respCode":"FF","merOrderId":"POS20201029112994"}
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 346
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:11:13
+商户交易信息成功[1]
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 424
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:33:23
+商户交易信息：{"\/api\/plan\/activate_order":"","cur":"CNY","orderId":"1001","sign":"MHQJwyxcWMOTyypBSPmBycyoG8xhSTRNBE37Ep4VdpUo1NbdDbXgWrVMVrvXxWTrrVNF\/bgE9M\/RuF3gpV6J\/r5Kmy4G29nq\/4bPYlD\/8lI8\/42pYJU8Mlwz2MUs\/FAZZCNRVNGM6G\/f5a6p5eU QPabuhDooDkaEtFrhYvX460=","amt":"122000","txnRef":"795792","txnType":"PUR","terminalId":"29004199","shortPan":"0000","merchantId":"820290455320041","extData":"{\"orderType\":\"3\",\"payAmount\":\"\",\"cardType\":\"\",\"discountAmount\":\"\",\"issuerCode\":\"CUP\",\"sn\":\"00004304P203D92D00254\",\"hashPan\":\"\",\"userId\":\"\",\"authRef\":\"\",\"authOrderNo\":\"\",\"sdpMerchant\":\"93744914\"}","txnTime":"20200922144247","respCode":"FF","merOrderId":"POS20201029112994"}
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 346
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:33:23
+商户交易信息成功[1]
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 424
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:34:07
+商户交易信息：{"\/api\/plan\/activate_order":"","cur":"CNY","orderId":"1002","sign":"MHQJwyxcWMOTyypBSPmBycyoG8xhSTRNBE37Ep4VdpUo1NbdDbXgWrVMVrvXxWTrrVNF\/bgE9M\/RuF3gpV6J\/r5Kmy4G29nq\/4bPYlD\/8lI8\/42pYJU8Mlwz2MUs\/FAZZCNRVNGM6G\/f5a6p5eU QPabuhDooDkaEtFrhYvX460=","amt":"122000","txnRef":"795792","txnType":"PUR","terminalId":"29004199","shortPan":"0000","merchantId":"820290455320041","extData":"{\"orderType\":\"3\",\"payAmount\":\"\",\"cardType\":\"\",\"discountAmount\":\"\",\"issuerCode\":\"CUP\",\"sn\":\"00004304P203D92D00254\",\"hashPan\":\"\",\"userId\":\"\",\"authRef\":\"\",\"authOrderNo\":\"\",\"sdpMerchant\":\"93744914\"}","txnTime":"20200922144247","respCode":"00","merOrderId":"POS20201029112994"}
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 346
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:34:07
+商户交易信息成功[1]
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 424
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:34:10
+商户交易信息：{"\/api\/plan\/activate_order":"","cur":"CNY","orderId":"1003","sign":"MHQJwyxcWMOTyypBSPmBycyoG8xhSTRNBE37Ep4VdpUo1NbdDbXgWrVMVrvXxWTrrVNF\/bgE9M\/RuF3gpV6J\/r5Kmy4G29nq\/4bPYlD\/8lI8\/42pYJU8Mlwz2MUs\/FAZZCNRVNGM6G\/f5a6p5eU QPabuhDooDkaEtFrhYvX460=","amt":"122000","txnRef":"795792","txnType":"PUR","terminalId":"29004199","shortPan":"0000","merchantId":"820290455320041","extData":"{\"orderType\":\"3\",\"payAmount\":\"\",\"cardType\":\"\",\"discountAmount\":\"\",\"issuerCode\":\"CUP\",\"sn\":\"00004304P203D92D00254\",\"hashPan\":\"\",\"userId\":\"\",\"authRef\":\"\",\"authOrderNo\":\"\",\"sdpMerchant\":\"93744914\"}","txnTime":"20200922144247","respCode":"00","merOrderId":"POS20201029112994"}
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 346
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:34:11
+商户交易信息成功[1]
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 424
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:34:13
+商户交易信息：{"\/api\/plan\/activate_order":"","cur":"CNY","orderId":"1004","sign":"MHQJwyxcWMOTyypBSPmBycyoG8xhSTRNBE37Ep4VdpUo1NbdDbXgWrVMVrvXxWTrrVNF\/bgE9M\/RuF3gpV6J\/r5Kmy4G29nq\/4bPYlD\/8lI8\/42pYJU8Mlwz2MUs\/FAZZCNRVNGM6G\/f5a6p5eU QPabuhDooDkaEtFrhYvX460=","amt":"122000","txnRef":"795792","txnType":"PUR","terminalId":"29004199","shortPan":"0000","merchantId":"820290455320041","extData":"{\"orderType\":\"3\",\"payAmount\":\"\",\"cardType\":\"\",\"discountAmount\":\"\",\"issuerCode\":\"CUP\",\"sn\":\"00004304P203D92D00254\",\"hashPan\":\"\",\"userId\":\"\",\"authRef\":\"\",\"authOrderNo\":\"\",\"sdpMerchant\":\"93744914\"}","txnTime":"20200922144247","respCode":"00","merOrderId":"POS20201029112994"}
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 346
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:34:14
+商户交易信息成功[1]
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 424
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:34:17
+商户交易信息：{"\/api\/plan\/activate_order":"","cur":"CNY","orderId":"1005","sign":"MHQJwyxcWMOTyypBSPmBycyoG8xhSTRNBE37Ep4VdpUo1NbdDbXgWrVMVrvXxWTrrVNF\/bgE9M\/RuF3gpV6J\/r5Kmy4G29nq\/4bPYlD\/8lI8\/42pYJU8Mlwz2MUs\/FAZZCNRVNGM6G\/f5a6p5eU QPabuhDooDkaEtFrhYvX460=","amt":"122000","txnRef":"795792","txnType":"PUR","terminalId":"29004199","shortPan":"0000","merchantId":"820290455320041","extData":"{\"orderType\":\"3\",\"payAmount\":\"\",\"cardType\":\"\",\"discountAmount\":\"\",\"issuerCode\":\"CUP\",\"sn\":\"00004304P203D92D00254\",\"hashPan\":\"\",\"userId\":\"\",\"authRef\":\"\",\"authOrderNo\":\"\",\"sdpMerchant\":\"93744914\"}","txnTime":"20200922144247","respCode":"00","merOrderId":"POS20201029112994"}
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 346
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:34:17
+商户交易信息成功[1]
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 424
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:47:07
+商户交易信息：{"\/api\/plan\/activate_order":"","cur":"CNY","orderId":"1006","sign":"MHQJwyxcWMOTyypBSPmBycyoG8xhSTRNBE37Ep4VdpUo1NbdDbXgWrVMVrvXxWTrrVNF\/bgE9M\/RuF3gpV6J\/r5Kmy4G29nq\/4bPYlD\/8lI8\/42pYJU8Mlwz2MUs\/FAZZCNRVNGM6G\/f5a6p5eU QPabuhDooDkaEtFrhYvX460=","amt":"122000","txnRef":"795792","txnType":"PUR","terminalId":"29004199","shortPan":"0000","merchantId":"820290455320041","extData":"{\"orderType\":\"3\",\"payAmount\":\"\",\"cardType\":\"\",\"discountAmount\":\"\",\"issuerCode\":\"CUP\",\"sn\":\"00004304P203D92D00254\",\"hashPan\":\"\",\"userId\":\"\",\"authRef\":\"\",\"authOrderNo\":\"\",\"sdpMerchant\":\"93744914\"}","txnTime":"20200922144247","respCode":"00","merOrderId":"POS20201029112994"}
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 346
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:47:07
+商户交易信息成功[1]
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 424
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:47:10
+商户交易信息：{"\/api\/plan\/activate_order":"","cur":"CNY","orderId":"1007","sign":"MHQJwyxcWMOTyypBSPmBycyoG8xhSTRNBE37Ep4VdpUo1NbdDbXgWrVMVrvXxWTrrVNF\/bgE9M\/RuF3gpV6J\/r5Kmy4G29nq\/4bPYlD\/8lI8\/42pYJU8Mlwz2MUs\/FAZZCNRVNGM6G\/f5a6p5eU QPabuhDooDkaEtFrhYvX460=","amt":"122000","txnRef":"795792","txnType":"PUR","terminalId":"29004199","shortPan":"0000","merchantId":"820290455320041","extData":"{\"orderType\":\"3\",\"payAmount\":\"\",\"cardType\":\"\",\"discountAmount\":\"\",\"issuerCode\":\"CUP\",\"sn\":\"00004304P203D92D00254\",\"hashPan\":\"\",\"userId\":\"\",\"authRef\":\"\",\"authOrderNo\":\"\",\"sdpMerchant\":\"93744914\"}","txnTime":"20200922144247","respCode":"00","merOrderId":"POS20201029112994"}
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 346
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:47:10
+商户交易信息成功[1]
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 424
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:47:13
+商户交易信息：{"\/api\/plan\/activate_order":"","cur":"CNY","orderId":"1008","sign":"MHQJwyxcWMOTyypBSPmBycyoG8xhSTRNBE37Ep4VdpUo1NbdDbXgWrVMVrvXxWTrrVNF\/bgE9M\/RuF3gpV6J\/r5Kmy4G29nq\/4bPYlD\/8lI8\/42pYJU8Mlwz2MUs\/FAZZCNRVNGM6G\/f5a6p5eU QPabuhDooDkaEtFrhYvX460=","amt":"122000","txnRef":"795792","txnType":"PUR","terminalId":"29004199","shortPan":"0000","merchantId":"820290455320041","extData":"{\"orderType\":\"3\",\"payAmount\":\"\",\"cardType\":\"\",\"discountAmount\":\"\",\"issuerCode\":\"CUP\",\"sn\":\"00004304P203D92D00254\",\"hashPan\":\"\",\"userId\":\"\",\"authRef\":\"\",\"authOrderNo\":\"\",\"sdpMerchant\":\"93744914\"}","txnTime":"20200922144247","respCode":"00","merOrderId":"POS20201029112994"}
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 346
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:47:13
+商户交易信息成功[1]
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 424
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:47:16
+商户交易信息：{"\/api\/plan\/activate_order":"","cur":"CNY","orderId":"1009","sign":"MHQJwyxcWMOTyypBSPmBycyoG8xhSTRNBE37Ep4VdpUo1NbdDbXgWrVMVrvXxWTrrVNF\/bgE9M\/RuF3gpV6J\/r5Kmy4G29nq\/4bPYlD\/8lI8\/42pYJU8Mlwz2MUs\/FAZZCNRVNGM6G\/f5a6p5eU QPabuhDooDkaEtFrhYvX460=","amt":"122000","txnRef":"795792","txnType":"PUR","terminalId":"29004199","shortPan":"0000","merchantId":"820290455320041","extData":"{\"orderType\":\"3\",\"payAmount\":\"\",\"cardType\":\"\",\"discountAmount\":\"\",\"issuerCode\":\"CUP\",\"sn\":\"00004304P203D92D00254\",\"hashPan\":\"\",\"userId\":\"\",\"authRef\":\"\",\"authOrderNo\":\"\",\"sdpMerchant\":\"93744914\"}","txnTime":"20200922144247","respCode":"00","merOrderId":"POS20201029112994"}
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 346
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:47:16
+商户交易信息成功[1]
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 424
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:48:26
+商户交易信息：{"\/api\/plan\/activate_order":"","cur":"CNY","orderId":"1010","sign":"MHQJwyxcWMOTyypBSPmBycyoG8xhSTRNBE37Ep4VdpUo1NbdDbXgWrVMVrvXxWTrrVNF\/bgE9M\/RuF3gpV6J\/r5Kmy4G29nq\/4bPYlD\/8lI8\/42pYJU8Mlwz2MUs\/FAZZCNRVNGM6G\/f5a6p5eU QPabuhDooDkaEtFrhYvX460=","amt":"122000","txnRef":"795792","txnType":"PUR","terminalId":"29004199","shortPan":"0000","merchantId":"820290455320041","extData":"{\"orderType\":\"3\",\"payAmount\":\"\",\"cardType\":\"\",\"discountAmount\":\"\",\"issuerCode\":\"CUP\",\"sn\":\"00004304P203D92D00254\",\"hashPan\":\"\",\"userId\":\"\",\"authRef\":\"\",\"authOrderNo\":\"\",\"sdpMerchant\":\"93744914\"}","txnTime":"20200922144247","respCode":"00","merOrderId":"POS20201029112994"}
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 346
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:48:26
+商户交易信息成功[1]
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 424
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:48:29
+商户交易信息：{"\/api\/plan\/activate_order":"","cur":"CNY","orderId":"1011","sign":"MHQJwyxcWMOTyypBSPmBycyoG8xhSTRNBE37Ep4VdpUo1NbdDbXgWrVMVrvXxWTrrVNF\/bgE9M\/RuF3gpV6J\/r5Kmy4G29nq\/4bPYlD\/8lI8\/42pYJU8Mlwz2MUs\/FAZZCNRVNGM6G\/f5a6p5eU QPabuhDooDkaEtFrhYvX460=","amt":"122000","txnRef":"795792","txnType":"PUR","terminalId":"29004199","shortPan":"0000","merchantId":"820290455320041","extData":"{\"orderType\":\"3\",\"payAmount\":\"\",\"cardType\":\"\",\"discountAmount\":\"\",\"issuerCode\":\"CUP\",\"sn\":\"00004304P203D92D00254\",\"hashPan\":\"\",\"userId\":\"\",\"authRef\":\"\",\"authOrderNo\":\"\",\"sdpMerchant\":\"93744914\"}","txnTime":"20200922144247","respCode":"00","merOrderId":"POS20201029112994"}
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 346
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:48:30
+商户交易信息成功[1]
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 424
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:52:19
+商户交易信息：{"\/api\/plan\/activate_order":"","cur":"CNY","orderId":"1012","sign":"MHQJwyxcWMOTyypBSPmBycyoG8xhSTRNBE37Ep4VdpUo1NbdDbXgWrVMVrvXxWTrrVNF\/bgE9M\/RuF3gpV6J\/r5Kmy4G29nq\/4bPYlD\/8lI8\/42pYJU8Mlwz2MUs\/FAZZCNRVNGM6G\/f5a6p5eU QPabuhDooDkaEtFrhYvX460=","amt":"122000","txnRef":"795792","txnType":"PUR","terminalId":"29004199","shortPan":"0000","merchantId":"820290455320041","extData":"{\"orderType\":\"3\",\"payAmount\":\"\",\"cardType\":\"\",\"discountAmount\":\"\",\"issuerCode\":\"CUP\",\"sn\":\"00004304P203D92D00254\",\"hashPan\":\"\",\"userId\":\"\",\"authRef\":\"\",\"authOrderNo\":\"\",\"sdpMerchant\":\"93744914\"}","txnTime":"20200922144247","respCode":"00","merOrderId":"POS20201029112994"}
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 346
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:52:19
+商户交易信息成功[1]
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 424
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:57:00
+商户交易信息：{"\/api\/plan\/activate_order":"","cur":"CNY","orderId":"1013","sign":"MHQJwyxcWMOTyypBSPmBycyoG8xhSTRNBE37Ep4VdpUo1NbdDbXgWrVMVrvXxWTrrVNF\/bgE9M\/RuF3gpV6J\/r5Kmy4G29nq\/4bPYlD\/8lI8\/42pYJU8Mlwz2MUs\/FAZZCNRVNGM6G\/f5a6p5eU QPabuhDooDkaEtFrhYvX460=","amt":"122000","txnRef":"795792","txnType":"PUR","terminalId":"29004199","shortPan":"0000","merchantId":"820290455320041","extData":"{\"orderType\":\"3\",\"payAmount\":\"\",\"cardType\":\"\",\"discountAmount\":\"\",\"issuerCode\":\"CUP\",\"sn\":\"00004304P203D92D00254\",\"hashPan\":\"\",\"userId\":\"\",\"authRef\":\"\",\"authOrderNo\":\"\",\"sdpMerchant\":\"93744914\"}","txnTime":"20200922144247","respCode":"00","merOrderId":"POS20201029112994"}
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 346
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 11:57:00
+商户交易信息成功[1]
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 424
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 13:49:46
+商户交易信息：{"\/api\/plan\/activate_order":"","cur":"CNY","orderId":"1016","sign":"MHQJwyxcWMOTyypBSPmBycyoG8xhSTRNBE37Ep4VdpUo1NbdDbXgWrVMVrvXxWTrrVNF\/bgE9M\/RuF3gpV6J\/r5Kmy4G29nq\/4bPYlD\/8lI8\/42pYJU8Mlwz2MUs\/FAZZCNRVNGM6G\/f5a6p5eU QPabuhDooDkaEtFrhYvX460=","amt":"122000","txnRef":"795792","txnType":"PUR","terminalId":"29004199","shortPan":"0000","merchantId":"820290455320041","extData":"{\"orderType\":\"3\",\"payAmount\":\"\",\"cardType\":\"\",\"discountAmount\":\"\",\"issuerCode\":\"CUP\",\"sn\":\"00004304P203D92D00111\",\"hashPan\":\"\",\"userId\":\"\",\"authRef\":\"\",\"authOrderNo\":\"\",\"sdpMerchant\":\"93744914\"}","txnTime":"20200922144247","respCode":"00","merOrderId":"POS20201029112994"}
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 346
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>
+
+<------------------------------------------------------------------------
+2020-09-27 13:49:46
+商户交易信息成功[1,1,1]
+Array
+(
+    [file] => D:\workspaces\www.shenghuoban.com\application\api\controller\Plan.php
+    [line] => 424
+    [function] => prf
+    [class] => app\api\controller\Plan
+    [type] => ->
+)
+------------------------------------------------------------------------>

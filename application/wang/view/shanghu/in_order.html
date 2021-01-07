@@ -1,0 +1,110 @@
+<link rel="stylesheet" href="__ROOT__/static/plugs/layui/css/layui.css?at={:date('md')}">
+<form onsubmit="return false;" action="{:request()->url()}" data-auto="true" method="post" class='layui-form layui-form-pane' autocomplete="off">
+	<label class="think-form-label"><span style="color:red">*录入订单所属sn如果未激活，需要先录入激活，激活数据一分钟后生效，激活生效后，即可录入订单</span></label>
+    <div class="layui-card-body">
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">SN编号</label>
+            <label class="layui-col-xs10">
+                <input name="machine_no" value='' required="required" placeholder="请输入SN编号" class="layui-input">
+            </label>
+        </div>
+    </div>
+    <div class="layui-card-body">
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">交易流水号</label>
+            <label class="layui-col-xs10">
+                <input name="logNo" value='' placeholder="请输入流水号" class="layui-input">
+            </label>
+        </div>
+    </div>
+    <div class="layui-card-body">
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">交易类型</label>
+            <label class="layui-col-xs10">
+            		<select required class="layui-select" id="txncd" name="txnCd">
+                        <option value="">请选择</option>
+                        <option value="PUR">消费交易</option>
+                        <option value="SCP">扫码支付</option>
+                    </select>
+             </label>
+        </div>
+    </div>
+    <div class="layui-card-body">
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">发卡机构</label>
+            <label class="layui-col-xs10">
+            		<select required class="layui-select" id="crdtyp" name="crdTyp">
+                        <option value="">请选择</option>
+                        <option value="CUP">银行卡CUP（扫码统一都不是CUP）</option>
+                        <option value="NC">非CUP</option>
+                    </select>
+             </label>
+        </div>
+    </div>
+    <div class="layui-card-body">
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">交易时间</label>
+            <label class="layui-col-xs10">
+             <input type="text" class="layui-input" required="required" id="test10" name="txnTm"  placeholder=" 请选择交易时间 ">
+            </label>
+        </div>
+    </div>
+    <div class="layui-card-body">
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">交易金额</label>
+            <label class="layui-col-xs10">
+                <input name="txnAmt" value='' required="required" placeholder="请输入交易金额" class="layui-input">
+            </label>
+        </div>
+    </div>
+    <div class="layui-card-body">
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">交易卡号</label>
+            <label class="layui-col-xs10">
+                <input name="crdNo" value='' placeholder="请输入交易卡号" class="layui-input">
+            </label>
+        </div>
+    </div>
+    <div class="layui-card-body">
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">终端号</label>
+            <label class="layui-col-xs10">
+                <input name="trmNo" value='' placeholder="请输入终端号" class="layui-input">
+            </label>
+        </div>
+    </div>
+    <div class="layui-card-body">
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">批次号</label>
+            <label class="layui-col-xs10">
+                <input name="batNo" value='' placeholder="请输入批次号" class="layui-input">
+            </label>
+        </div>
+    </div>
+    <div class="layui-card-body">
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">终端流水号</label>
+            <label class="layui-col-xs10">
+                <input name="cseqNo" value='' placeholder="请输入终端流水号" class="layui-input">
+            </label>
+        </div>
+    </div>
+
+    <div class="hr-line-dashed"></div>
+    <div class="layui-form-item text-center">
+        <button class="layui-btn" type='submit'>保存数据</button>
+        <button class="layui-btn layui-btn-danger" type='button' data-confirm="确定要取消编辑吗？" data-close>取消编辑</button>
+    </div>
+</form>
+<script>
+    form.render();
+    laydate.render({
+        elem: '#test9'
+        ,format: 'yyyyMMdd'
+      });
+    laydate.render({
+        elem: '#test10'
+        ,type: 'datetime'
+        ,format: 'yyyyMMddHHmmss'
+      });
+</script>

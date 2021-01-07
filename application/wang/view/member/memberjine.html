@@ -1,0 +1,92 @@
+<form onsubmit="return false;" action="{:request()->url()}" data-auto="true" method="post" class='layui-form layui-card' autocomplete="off">
+
+    <div class="layui-card-body">
+		<div class="layui-card-body">
+	        <div class="layui-row margin-bottom-15">
+	            <label class="layui-col-xs2 think-form-label">交易时间</label>
+	            <label class="layui-col-xs10">
+	             <input type="text" class="layui-input" required="required" id="test10" name="time"  placeholder=" 请选择交易时间 ">
+	            </label>
+	        </div>
+	    </div>
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">积分</label>
+            <label class="layui-col-xs10">
+                <input name="integral" value='{$vo.integral|default=""}' placeholder="请输入积分" class="layui-input">
+                <span style="color: red;">添加积分写大于0的积分，减除积分写入小于0的积分</span>
+            </label>
+        </div>
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">活动积分</label>
+            <label class="layui-col-xs10">
+                <input name="activity_integral" value='{$vo.activity_integral|default=""}' placeholder="请输入积分" class="layui-input">
+                <span style="color: red;">添加积分写大于0的积分，减除积分写入小于0的积分</span>
+            </label>
+        </div>
+
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">激活奖</label>
+            <label class="layui-col-xs10">
+                <input name="activation_prize" value='{$vo.activation_prize|default=""}' placeholder="请输入金额" class="layui-input">
+                <span style="color: red;">添加金额写入大于0的金额，减除金额写入小于0的金额</span>
+            </label>
+        </div>
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">推荐奖</label>
+            <label class="layui-col-xs10">
+                <input name="recommend_prize" value='{$vo.recommend_prize|default=""}' placeholder="请输入金额" class="layui-input">
+                <span style="color: red;">添加金额写入大于0的金额，减除金额写入小于0的金额</span>
+            </label>
+        </div>
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">分润奖</label>
+            <label class="layui-col-xs10">
+                <input name="profit_prize" value='{$vo.profit_prize|default=""}' placeholder="请输入金额" class="layui-input">
+                <span style="color: red;">添加金额写入大于0的金额，减除金额写入小于0的金额</span>
+            </label>
+        </div>
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">活动奖</label>
+            <label class="layui-col-xs10">
+                <input name="activity_prize" value='{$vo.activity_prize|default=""}' placeholder="请输入金额" class="layui-input">
+                <span style="color: red;">添加金额写入大于0的金额，减除金额写入小于0的金额</span>
+            </label>
+        </div>
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">达标奖</label>
+            <label class="layui-col-xs10">
+                <input name="standard_prize" value='{$vo.standard_prize|default=""}' placeholder="请输入金额" class="layui-input">
+                <span style="color: red;">添加金额写入大于0的金额，减除金额写入小于0的金额</span>
+            </label>
+        </div>
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">团队奖</label>
+            <label class="layui-col-xs10">
+                <input name="team_prize" value='{$vo.team_prize|default=""}' placeholder="请输入金额" class="layui-input">
+                <span style="color: red;">添加金额写入大于0的金额，减除金额写入小于0的金额</span>
+            </label>
+        </div>
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">欠货款</label>
+            <label class="layui-col-xs10">
+                <input name="payment" value='{$vo.payment|default=""}' placeholder="请输入金额" class="layui-input">
+                <span style="color: red;">添加金额写入大于0的金额，减除金额写入小于0的金额</span>
+            </label>
+        </div>
+    </div>
+
+    <div class="hr-line-dashed"></div>
+    <div class="layui-form-item text-center">
+        {notempty name='vo.id'}<input type='hidden' value='{$vo.id}' name='id'>{/notempty}
+        <button class="layui-btn" type='submit'>保存数据</button>
+        <button class="layui-btn layui-btn-danger" type='button' data-confirm="确定要取消编辑吗？" data-close>取消编辑</button>
+    </div>
+</form>
+<script>
+    form.render();
+    laydate.render({
+        elem: '#test10'
+        ,type: 'datetime'
+        ,format: 'yyyy-MM-dd HH:mm:ss'
+      });
+</script>

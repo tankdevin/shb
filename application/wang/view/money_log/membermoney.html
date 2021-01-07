@@ -1,0 +1,84 @@
+{extend name='admin@main'}
+
+{block name="content"}
+<div class="think-box-shadow">
+    <fieldset>
+        <legend>条件搜索</legend>
+        <form class="layui-form layui-form-pane form-search" action="{:request()->url()}" onsubmit="return false" method="get" autocomplete="off">
+
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">伙伴手机</label>
+                <div class="layui-input-inline">
+                    <input name="phone" value="{$Think.get.phone|default=''}" placeholder="伙伴手机" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">交易类型</label>
+                <div class="layui-input-inline">
+                    <select class="layui-select" name="status">
+                        {foreach [''=>'- 全部状态 -','4'=>'激活','5'=>'销售津贴','6'=>'展业津贴','7'=>'分润津贴','8'=>'管理津贴'] as $k=>$v}
+                        <!--{eq name='Think.get.status' value='$k.""'}-->
+                        <option selected value="{$k}">{$v}</option>
+                        <!--{else}-->
+                        <option value="{$k}">{$v}</option>
+                        <!--{/eq}-->
+                        {/foreach}
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">时间</label>
+                <div class="layui-input-inline">
+                    <input name="create_at" value="{$Think.get.create_at|default=''}" placeholder="请选择时间" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <button class="layui-btn layui-btn-primary"><i class="layui-icon">&#xe615;</i> 搜 索</button>
+            </div>
+        </form>
+        <script>
+            form.render();
+            laydate.render({range: true, elem: '[name="create_at"]'})
+        </script>
+    </fieldset>
+    <table class="layui-table margin-top-10" lay-skin="line">
+        {notempty name='list'}
+        <thead>
+        <tr>
+            <th class='list-table-check-td think-checkbox'>
+                <input data-auto-none data-check-target='.list-check-box' type='checkbox'>
+            </th>
+            <th class='text-left nowrap'>会员手机</th>
+            <th class='text-left nowrap'>变动金额</th>
+            <th class='text-left nowrap'>变动前</th>
+            <th class='text-left nowrap'>说明</th>
+            <th class='text-left nowrap'>来源</th>
+            <th class='text-left nowrap'>创建时间</th>
+            <th class='text-left nowrap'></th>
+        </tr>
+        </thead>
+        {/notempty}
+        <tbody>
+        {foreach $list as $key=>$vo}
+        <tr>
+            <td class='list-table-check-td think-checkbox'>
+                <label><input class="list-check-box" value='{$vo.id}' type='checkbox'></label>
+            </td>
+            <td class='text-left'>{$vo.mid|shoujihao}</td>
+            <td class='text-left'>{$vo.money}</td>
+            <td class='text-left'>{$vo.before}</td>
+            <td class='text-left'>{$vo.content}</td>
+            <td class='text-left'>{$vo.extends}</td>
+            <td class='text-left'>{$vo.create_at|format_datetime}</td>
+            <td class='text-left'>
+
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+    {empty name='list'}<span class="notdata">没有记录哦</span>{else}{$pagehtml|raw|default=''}{/empty}
+</div>
+{/block}

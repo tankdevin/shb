@@ -1,0 +1,42 @@
+<form onsubmit="return false;" action="{:request()->url()}" data-auto="true" method="post" class='layui-form layui-card' autocomplete="off">
+
+    <div class="layui-card-body">
+
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">用户</label>
+            <label class="layui-col-xs10">
+                <select class="layui-select" name="mid" style="display: block">
+                    {foreach $userlaver as $k=>$v}
+                    <!--{eq name='Think.get.vip_level' value='$k.""'}-->
+                    <option selected value="{$v.id}">{$v.username}-{$v.phone}</option>
+                    <!--{else}-->
+                    <option value="{$v.id}">{$v.username}-{$v.phone}</option>
+                    <!--{/eq}-->
+                    {/foreach}
+                </select>
+            </label>
+        </div>
+
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">姓名</label>
+            <label class="layui-col-xs10">
+                <input name="shanghu_name" required value='{$vo.shanghu_name|default=""}' placeholder="请输入姓名" class="layui-input">
+            </label>
+        </div>
+        <input type="hidden" name="type_statu" required value='1'>
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">编号</label>
+            <label class="layui-col-xs10">
+                <input name="machine_no" required value='{$vo.machine_no|default=""}' placeholder="请输入编号" class="layui-input">
+            </label>
+        </div>
+
+    </div>
+
+    <div class="hr-line-dashed"></div>
+    <div class="layui-form-item text-center">
+        {notempty name='vo.id'}<input type='hidden' value='{$vo.id}' name='id'>{/notempty}
+        <button class="layui-btn" type='submit'>保存数据</button>
+        <button class="layui-btn layui-btn-danger" type='button' data-confirm="确定要取消编辑吗？" data-close>取消编辑</button>
+    </div>
+</form>

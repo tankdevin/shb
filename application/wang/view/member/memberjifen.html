@@ -1,0 +1,44 @@
+{extend name='admin@main'}
+
+{block name="content"}
+<div class="think-box-shadow">
+    {include file='member/index_search'}
+    <table class="layui-table margin-top-10" lay-skin="line">
+        {notempty name='list'}
+        <thead>
+        <tr>
+            <th class='list-table-check-td think-checkbox'>
+                <input data-auto-none data-check-target='.list-check-box' type='checkbox'>
+            </th>
+            <th class='text-left nowrap'>会员手机</th>
+            <th class='text-left nowrap'>变动积分</th>
+            <th class='text-left nowrap'>变动前</th>
+            <th class='text-left nowrap'>说明</th>
+            <th class='text-left nowrap'>来源</th>
+            <th class='text-left nowrap'>创建时间</th>
+            <th class='text-left nowrap'></th>
+        </tr>
+        </thead>
+        {/notempty}
+        <tbody>
+        {foreach $list as $key=>$vo}
+        <tr>
+            <td class='list-table-check-td think-checkbox'>
+                <label><input class="list-check-box" value='{$vo.id}' type='checkbox'></label>
+            </td>
+            <td class='text-left'>{$vo.mid|memberlaver}</td>
+            <td class='text-left'>{$vo.money}</td>
+            <td class='text-left'>{$vo.before}</td>
+            <td class='text-left'>{$vo.content}</td>
+            <td class='text-left'>{$vo.extends}</td>
+            <td class='text-left'>{$vo.create_time|format_datetime}</td>
+            <td class='text-left'>
+
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+    {empty name='list'}<span class="notdata">没有记录哦</span>{else}{$pagehtml|raw|default=''}{/empty}
+</div>
+{/block}

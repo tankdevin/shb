@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="demo/zepto.min.js"></script>
+    <title>APP下载</title>
+
+    <style type="text/css">
+        @\69\6d\070\6f\72\74"\073\74\79\6c\65.\6d\69\6e.\063\73\073";
+        html,
+        body,
+        body div,
+        span,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        abbr,
+        address,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        samp,
+        small,
+        strong,
+        sub,
+        sup,
+        var,
+        b,
+        i,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        figure,
+        footer,
+        header,
+        menu,
+        nav,
+        section,
+        time,
+        mark,
+        audio,
+        video,
+        details,
+        summary {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font-weight: normal;
+            vertical-align: baseline;
+            background: transparent;
+        }
+        
+        article,
+        aside,
+        figure,
+        footer,
+        header,
+        nav,
+        section,
+        details,
+        summary {
+            display: block;
+        }
+        /* Handle box-sizing while better addressing child elements:
+           http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+        
+        html {
+            box-sizing: border-box;
+        }
+        
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+        /* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+        /* Responsive images and other embedded objects */
+        /* if you don't have full control over `img` tags (if you have to overcome attributes), consider adding height: auto */
+        
+        img,
+        object,
+        embed {
+            max-width: 100%;
+        }
+        /*
+           Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+            In fact, it *will* cause problems with Google Maps' controls at small size.
+            If this is the case for you, try uncommenting the following:
+        #map img {
+                max-width: none;
+        }
+        */
+        /* force a vertical scrollbar to prevent a jumpy page */
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font: normal 14px/1.5 Arial, Microsoft Yahei;
+            color: #333;
+        }
+        
+        .example {
+            padding: 20px;
+            left: 32%;
+        }
+        
+        .example img {
+            margin: 0 auto;
+        }
+        
+        .example h2 {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .example p {
+            margin: 20px 0;
+        }
+        
+        a {
+            display: inline-block;
+            /*background: #61B3E6;*/
+            color: #fff;
+            padding: 0 10px;
+            border-radius: 4px;
+            text-align: center;
+            margin: 0 5px;
+            line-height: 22px;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        /*a.btn-warn{background: #F0AD4E;}*/
+        
+        a:hover {
+            opacity: 0.8;
+        }
+        /*核心css*/
+        
+        .wxtip {
+            background: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 998;
+            display: none;
+        }
+        
+        .wxtip-icon {
+            width: 52px;
+            height: 67px;
+            background: url(style/weixin-tip.png) no-repeat;
+            display: block;
+            position: absolute;
+            right: 30px;
+            top: 20px;
+        }
+        
+        .wxtip-txt {
+            padding-top: 107px;
+            color: #fff;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        
+        .tips_center {
+            width: 86%;
+            margin: 0 auto;
+            margin-top: 20%;
+            margin-bottom: 6%
+        }
+        
+        .tips_center img {
+            width: 100%
+        }
+        
+        .tips_bottom {
+            position: absolute;
+            width: 100%
+        }
+        
+        .tips_bottom_1 {
+            width: 18%;
+            margin-left: 41%;
+            margin-bottom: 2%
+        }
+        
+        .tips_bottom_1 img {
+            width: 100%
+        }
+        
+        .tips_bottom_2 {
+            width: 36%;
+            margin-left: 32%
+        }
+        
+        .tips_bottom_2 img {
+            width: 100%
+        }
+        
+        .device {
+            background: #01ce9b;
+            position: absolute;
+            width: 100%;
+            height: 100%
+        }
+        
+        .abodytips {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: url(style/alltips.png) #333;
+            opacity: 0.9;
+            background-size: 100% 100%;
+            z-index: 10;
+            display: none;
+            cursor: pointer
+        }
+        
+        #iknown {
+            background: none;
+        }
+        
+        #JdownApp {
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 13px;
+        }
+        
+        #JdownApp2 {
+            text-align: center;
+            border-radius: 12px;
+        }
+        
+        .and {
+            width: 70%;
+            height: 60px;
+            background: #0C9;
+            line-height: 60px;
+        }
+        
+        .ios {
+            width: 70%;
+            height: 60px;
+            line-height: 60px;
+            background: #F63
+        }
+        
+        .jieshao {
+            margin: 70px 0 8px 0;
+        }
+        
+        .jieshao span {
+            text-align: left;
+            width: 10%;
+        }
+        
+        .jieshao p {
+            color: #CCC
+        }
+    </style>
+    <script>
+        function is_wechat_client() {
+            var ua = navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == "micromessenger") {
+                document.getElementById("alltip").style.display = "block";
+            } else {}
+            var u = navigator.userAgent,
+                app = navigator.appVersion;
+            var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
+            var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+            if (isAndroid) {
+                document.getElementById("androidtips").style.display = "block";
+                document.getElementById("iostips").style.display = "none";
+            }
+            if (isIOS) {
+                document.getElementById("androidtips").style.display = "none";
+                document.getElementById("iostips").style.display = "block";
+            }
+        }
+
+        function hide1() {
+            document.getElementById("alltip").style.display = "none";
+        }
+        $("#alltip").on('touchmove', function(e) {
+            e.preventDefault(); //阻止默认行为
+        })
+    </script>
+</head>
+
+<body onload="is_wechat_client()">
+    <div class="abodytips" id="alltip" style="display: none;">
+        <div class="tips_center">
+            <img src="demo/weixin.png" id="androidtips" style="display:none;">
+            <img src="demo/weixin.png" id="iostips" style="display: block;">
+            <img src="style/tip2.png" id="tips3" style="display:none;"></div>
+        <div class="tips_bottom">
+            <div class="tips_bottom_2" style="display:none;">
+                <a href="javascript:void(0)" id="iknown" onclick="hide1()"><img src="demo/weixin.png"></a>
+            </div>
+        </div>
+    </div>
+    <div class="example" align="center">
+        <img src="demo/Umilogo.png" style="max-width: 200px;">
+        <h2>盛伙伴</h2>
+        <p>版本号：0.3.3</p>
+        <div class="and" id="JdownApp"><a href="ioss.html">iPhone版下载</a></div>
+        <div class="ios" id="JdownApp2"><a href="android.html" class="btn-warn">Android版下载</a></div>
+        <div class="wxtip" id="JweixinTip">
+        </div>
+
+
+    </div>
+    <script type="text/javascript">
+        function weixinTip(ele) {
+            var ua = navigator.userAgent;
+            var isWeixin = !!/MicroMessenger/i.test(ua);
+            if (isWeixin) {
+                ele.onclick = function(e) {
+                    window.event ? window.event.returnValue = false : e.preventDefault();
+                    document.getElementById('alltip').style.display = 'block';
+                }
+                document.getElementById('alltip').onclick = function() {
+                    this.style.display = 'none';
+                }
+            }
+        }
+        var btn1 = document.getElementById('JdownApp'); //下载一
+        weixinTip(btn1);
+        var btn2 = document.getElementById('JdownApp2'); //下载二
+        weixinTip(btn2);
+    </script>
+</body>
+
+</html>

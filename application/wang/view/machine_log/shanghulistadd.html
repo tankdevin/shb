@@ -1,0 +1,19 @@
+<form onsubmit="return false;" action="{:request()->url()}" data-auto="true" method="post" class='layui-form layui-card' autocomplete="off">
+
+    <div class="layui-card-body">
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">机具编号</label>
+            <label class="layui-col-xs10">
+                <textarea name="connet" required  placeholder="请输入编号" rows="6" style="width: 100%;">{$vo.connet|default=""}</textarea>
+                <span>多个机具编号用,隔开（例如：编号1,编号2,编号3）</span>
+            </label>
+        </div>
+    </div>
+
+    <div class="hr-line-dashed"></div>
+    <div class="layui-form-item text-center">
+        {notempty name='vo.id'}<input type='hidden' value='{$vo.id}' name='id'>{/notempty}
+        <button class="layui-btn" type='submit'>保存数据</button>
+        <button class="layui-btn layui-btn-danger" type='button' data-confirm="确定要取消编辑吗？" data-close>取消编辑</button>
+    </div>
+</form>

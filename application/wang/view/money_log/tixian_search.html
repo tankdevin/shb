@@ -1,0 +1,57 @@
+<fieldset>
+    <legend>条件搜索</legend>
+    <form class="layui-form layui-form-pane form-search" action="{:request()->url()}" onsubmit="return false" method="get" autocomplete="off">
+
+        <div class="layui-form-item layui-inline">
+            <label class="layui-form-label">会员手机</label>
+            <div class="layui-input-inline">
+                <input name="phone" value="{$Think.get.phone|default=''}" placeholder="请输入会员手机" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item layui-inline">
+            <label class="layui-form-label">类型</label>
+            <div class="layui-input-inline">
+                <select class="layui-select" name="type">
+                    {foreach [''=>'- 全部类型 -','1'=>'补贴收益','2'=>'分润收益','3'=>'押金提现'] as $k=>$v}
+                    {eq name='Think.get.type' value='$k.""'}
+                    <option selected value="{$k}">{$v}</option>
+                    {else}
+                    <option value="{$k}">{$v}</option>
+                    {/eq}
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item layui-inline">
+            <label class="layui-form-label">状态</label>
+            <div class="layui-input-inline">
+                <select class="layui-select" name="status">
+                    {foreach [''=>'- 全部状态 -','0'=>'未审核','1'=>'手动','2'=>'支付宝','3'=>'银行卡','4'=>'拒绝'] as $k=>$v}
+                    {eq name='Think.get.status' value='$k.""'}
+                    <option selected value="{$k}">{$v}</option>
+                    {else}
+                    <option value="{$k}">{$v}</option>
+                    {/eq}
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item layui-inline">
+            <label class="layui-form-label">时间</label>
+            <div class="layui-input-inline">
+                <input name="create_at" value="{$Think.get.create_at|default=''}" placeholder="请选择发送时间" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item layui-inline">
+            <button class="layui-btn layui-btn-primary"><i class="layui-icon">&#xe615;</i> 搜 索</button>
+            <a href='{:url("excel/tixianlist")}?phone={$Think.get.phone|default=""}&type={$Think.get.type|default=""}&create_at={$Think.get.create_at|default=""}&status={$status|default=""}' class="layui-btn layui-btn-primary layui-select-disabled"><i class="layui-icon layui-icon-export"></i> 导 出</a>
+        </div>
+    </form>
+    <script>
+        form.render();
+        laydate.render({range: true, elem: '[name="create_at"]'})
+    </script>
+</fieldset>

@@ -1,0 +1,114 @@
+{extend name='admin@main'}
+
+{block name="content"}
+<link rel="stylesheet" href="https://heerey525.github.io/layui-v2.4.3/layui-v2.4.4/css/layui.css" media="all">
+<!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+<style type="text/css">
+    .downpanel .layui-select-title span {
+        line-height: 38px;
+    }
+
+    /*继承父类颜色*/
+    .downpanel dl dd:hover {
+        background-color: inherit;
+    }
+</style>
+<div class="think-box-shadow">
+    {empty name='list'}
+    <blockquote class="layui-elem-quote">没 有 记 录 哦！</blockquote>
+    {else}
+    <table class="layui-table" lay-skin="line">
+        <thead>
+        <tr>
+            <th class='list-table-check-td think-checkbox'>
+                <input data-auto-none data-check-target='.list-check-box' type='checkbox'>
+            </th>
+
+            <th class='text-center' style="width:30px"></th>
+            <th style="width:180px"></th>
+            <th class='layui-hide-xs' style="width:180px"></th>
+            <th colspan="2"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <div id="test13" class="demo-tree-more"></div>
+
+        <script src="https://heerey525.github.io/layui-v2.4.3/layui-v2.4.4/layui.js" charset="utf-8"></script>
+        <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+        <script type="text/javascript">
+            layui.use(['tree', 'util'], function () {
+                var tree = layui.tree,
+                    layer = layui.layer,
+                    util = layui.util,
+                    //模拟数据1
+                    data1 = [{
+                        title: '江西',
+                        id: 1,
+                        children: [{
+                            title: '南昌',
+                            id: 1000,
+                            children: [{
+                                title: '青山湖区',
+                                id: 10001
+                            }, {
+                                title: '高新区',
+                                id: 10002
+                            }]
+                        }, {
+                            title: '九江',
+                            id: 1001
+                        }, {
+                            title: '赣州',
+                            id: 1002
+                        }]
+                    }, {
+                        title: '广西',
+                        id: 2,
+                        children: [{
+                            title: '南宁',
+                            id: 2000
+                        }, {
+                            title: '桂林',
+                            id: 2001
+                        }]
+                    }, {
+                        title: '陕西',
+                        id: 3,
+                        children: [{
+                            title: '西安',
+                            id: 3000
+                        }, {
+                            title: '延安',
+                            id: 3001
+                        }]
+                    }]
+                //无连接线风格
+                tree.render({
+                    elem: '#test13',
+                    data: data1,
+                    showLine: false, //是否开启连接线
+                    click: function (obj) {
+                        console.log(obj)
+                    }
+                });
+            });
+        </script>
+        {foreach $list as $key=>$vo}
+        <tr data-dbclick>
+            <td class='list-table-check-td think-checkbox'>
+                <input class="list-check-box" value='{$vo.phone}' type='checkbox'>
+            </td>
+            <td class="nowrap">{$vo.nickname}</td>
+            <td class='layui-hide-xs'>{$vo.phone}</td>
+
+            <td class='text-center nowrap notselect'>
+
+
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+    {/empty}
+</div>
+{/block}

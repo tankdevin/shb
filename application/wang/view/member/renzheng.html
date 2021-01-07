@@ -1,0 +1,68 @@
+{extend name='admin@main'}
+
+{block name="content"}
+<div class="think-box-shadow">
+    {include file='member/renzheng_search'}
+    <table class="layui-table margin-top-10" lay-skin="line">
+        {notempty name='list'}
+        <thead>
+        <tr>
+            <th class='list-table-check-td think-checkbox'>
+                <input data-auto-none data-check-target='.list-check-box' type='checkbox'>
+            </th>
+            <th class='text-left nowrap'>会员手机</th>
+            <th class='text-left nowrap'>姓名</th>
+            <th class='text-left nowrap'>身份证号码</th>
+            <th class='text-left nowrap'>身份证正面</th>
+            <th class='text-left nowrap'>身份证背面</th>
+            <th class='text-left nowrap'>手持身份证</th>
+            <th class='text-left nowrap'>银行卡号</th>
+            <th class='text-left nowrap'>所属支行</th>
+            <th class='text-left nowrap'>申请时间</th>
+            <th class='text-left nowrap'>状态</th>
+            <th class='text-left nowrap'></th>
+        </tr>
+        </thead>
+        {/notempty}
+        <tbody>
+        {foreach $list as $key=>$vo}
+        <tr>
+            <td class='list-table-check-td think-checkbox'>
+                <label><input class="list-check-box" value='{$vo.id}' type='checkbox'></label>
+            </td>
+            <td class='text-left nowrap'>
+                <div class="inline-block">{$vo.mid|shoujihao}</div>
+            </td>
+            <td class='text-left'>{$vo.card_name|default='--'}</td>
+            <td class='text-left'>{$vo.card_num}</td>
+            <td class='text-left'><a data-tips-image="{$vo.card_front}" class="fa fa-image font-s14 margin-right-5"></a>点击查看</td>
+            <td class='text-left'><a data-tips-image="{$vo.card_back}" class="fa fa-image font-s14 margin-right-5"></a>点击查看</td>
+            <td class='text-left'><a data-tips-image="{$vo.card_hand}" class="fa fa-image font-s14 margin-right-5"></a>点击查看</td>
+            <td class='text-left'>{$vo.bank_num|default='--'}</td>
+            <td class='text-left'>{$vo.bank_name|default='--'}</td>
+            <td class='text-left'>{$vo.create_at|format_datetime}</td>
+
+            {if $vo.card_state == 1}
+                <td class='text-left' style="color: #00B83F;"> 认证通过 </td>
+            {elseif  $vo.card_state == 2}
+                 <td class='text-left' style="color: red;"> 认证拒绝 </td>
+            {else}
+                 <td class='text-left' style="color: #ecca1b;"> 未批准 </td>
+            {/if}
+
+            <td class='text-left'>
+                {if $vo.card_state == 0}
+                <a class="layui-btn layui-btn-sm layui-btn-ren" data-action="{:url('forbid')}" data-value="id#{$vo.id};status#0">认证通过</a>
+                <a class="layui-btn layui-btn-sm layui-btn-danger" data-action="{:url('forbidad')}" data-value="id#{$vo.id};status#0">认证拒绝</a>
+                {/if}
+                {if $vo.card_state == 1}
+                <a data-title="修改信息" class="layui-btn layui-btn-sm" data-modal='{:url("editrenzehng")}?id={$vo.id}'>修改信息</a>
+                {/if}
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+    {empty name='list'}<span class="notdata">没有记录哦</span>{else}{$pagehtml|raw|default=''}{/empty}
+</div>
+{/block}

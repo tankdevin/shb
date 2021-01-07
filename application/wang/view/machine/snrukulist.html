@@ -1,0 +1,117 @@
+{extend name='admin@main'}
+
+{block name="button"}
+{if auth("wang/shanghu/snrukulist")}
+<button data-modal='{:url("jijuadd")}' data-title="添加机具" class='layui-btn layui-btn-sm layui-btn-primary'>批量划拨机具</button>
+{/if}
+{if auth("wang/machine/snrukulist")}
+<button data-action='{:url("jijuhuishouad")}' data-rule="id#{key}" class='layui-btn layui-btn-sm layui-btn-primary'>回收机具</button>
+{/if}
+<!--{if auth("wang/machine/snrukulist")}
+<button data-modal='{:url("jijuzhuanyitwo")}' data-rule="id#{key}" class='layui-btn layui-btn-sm layui-btn-primary'>机具转移</button>
+{/if}-->
+{/block}
+
+{block name="content"}
+<div class="think-box-shadow">
+    <fieldset>
+        <legend>条件搜索</legend>
+        <form class="layui-form layui-form-pane form-search" action="{:request()->url()}" onsubmit="return false" method="get" autocomplete="off">
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">SN码</label>
+                <div class="layui-input-inline">
+                    <input name="machine_no" value="{$Think.get.machine_no|default=''}" placeholder="请输入商户编号" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">伙伴手机号</label>
+                <div class="layui-input-inline">
+                    <input name="phone" value="{$Think.get.phone|default=''}" placeholder="请输入伙伴手机号" class="layui-input">
+                </div>
+            </div>
+            
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">排序</label>
+                <div class="layui-input-inline">
+                    <select class="layui-select" name="paixu">
+                        {foreach ['asc'=>'正序','desc'=>'倒序'] as $k=>$v}
+                        {eq name='Think.get.paixu' value='$k.""'}
+                        <option selected value="{$k}">{$v}</option>
+                        {else}
+                        <option value="{$k}">{$v}</option>
+                        {/eq}
+                        {/foreach}
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-form-item layui-inline">
+                <button class="layui-btn layui-btn-primary"><i class="layui-icon">&#xe615;</i> 搜 索</button>
+                <a href='{:url("excel/snrukulist")}?phone={$Think.get.phone|default=""}&machine_no={$Think.get.machine_no|default=""}&paixu={$Think.get.paixu|default=""}' class="layui-btn layui-btn-primary layui-select-disabled"><i class="layui-icon layui-icon-export"></i> 导 出</a>
+            </div>
+        </form>
+        <script>form.render()</script>
+    </fieldset>
+    <table class="layui-table margin-top-10" lay-skin="line">
+        {notempty name='list'}
+        <thead>
+        <tr>
+            <th class='list-table-check-td think-checkbox'>
+                <input data-auto-none data-check-target='.list-check-box' type='checkbox'>
+            </th>
+            <th class='text-left nowrap'>持有手机号</th>
+            <th class='text-left nowrap'>编号</th>
+            <th class='text-left nowrap'>SN码</th>
+            <th class='text-left nowrap'>机具类型</th>
+            <th class='text-left nowrap'>机具状态</th>
+            <th class="text-center">入网时间</th>
+            <th class="text-center">操作时间</th>
+            <th></th>
+        </tr>
+        </thead>
+        {/notempty}
+        <tbody>
+        {foreach $list as $key=>$vo}
+        <tr>
+            <td class='list-table-check-td think-checkbox'>
+                <input class="list-check-box" value='{$vo.id}' type='checkbox'>
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.mid|shoujihao}
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.id}
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.machine_no}
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.type|zhuangtai}
+            </td>
+            <td class='text-center nowrap'>
+                {if $vo.is_huabo eq 1}
+                    <span class="layui-badge layui-bg-green">未划拨</span><br>
+                {else}
+                <span class="layui-badge layui-bg-red">已划拨</span>
+                {/if}
+            </td>
+            <td class='text-center nowrap'>{$vo.create_time|format_datetime}</td>
+            <td class='text-center nowrap'>{$vo.update_time|format_datetime}</td>
+            <td class='text-left nowrap'>
+                {if $vo.is_huabo eq 1}
+                    <a data-title="划拨" class="layui-btn layui-bg-green" data-modal='{:url("jijuoneadd")}?id={$vo.id}'>划拨</a>
+                    <a data-title="删 除" class="layui-btn layui-bg-red" data-modal='{:url("jijudel")}?id={$vo.id}'>删 除</a>
+                {/if}
+                {if $vo.is_huabo eq 0}
+                <a data-title="转 移" class="layui-btn layui-btn-sm" data-modal='{:url("jijuzhuanyi")}?id={$vo.id}'>转 移</a>
+                <a data-title="回 收" class="layui-btn layui-btn-sm" data-modal='{:url("jijuhuishou")}?id={$vo.id}'>回 收</a>
+                {/if}
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+    {empty name='list'}<span class="notdata">没有记录哦</span>{else}{$pagehtml|raw|default=''}{/empty}
+</div>
+{/block}

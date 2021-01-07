@@ -1,0 +1,73 @@
+{extend name='admin@main'}
+
+{block name="content"}
+<div class="think-box-shadow">
+    <fieldset>
+        <legend>条件搜索</legend>
+        <form class="layui-form layui-form-pane form-search" action="{:request()->url()}" onsubmit="return false" method="get" autocomplete="off">
+
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">伙伴手机</label>
+                <div class="layui-input-inline">
+                    <input name="phone" value="{$Think.get.phone|default=''}" placeholder="伙伴手机" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">时间</label>
+                <div class="layui-input-inline">
+                    <input name="create_at" value="{$Think.get.create_at|default=''}" placeholder="请选择时间" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <button class="layui-btn layui-btn-primary"><i class="layui-icon">&#xe615;</i> 搜 索</button>
+                <a href='{:url("excel/jifenlist")}?phone={$Think.get.phone|default=""}&create_at={$Think.get.create_at|default=""}' class="layui-btn layui-btn-primary layui-select-disabled"><i class="layui-icon layui-icon-export"></i> 导 出</a>
+            </div>
+        </form>
+        <script>
+            form.render();
+            laydate.render({range: true, elem: '[name="create_at"]'})
+        </script>
+    </fieldset>
+    <table class="layui-table margin-top-10" lay-skin="line">
+        {notempty name='list'}
+        <thead>
+        <tr>
+            <th class='list-table-check-td think-checkbox'>
+                <input data-auto-none data-check-target='.list-check-box' type='checkbox'>
+            </th>
+            <th class='text-left nowrap'>伙伴姓名</th>
+            <th class='text-left nowrap'>伙伴手机</th>
+            <th class='text-left nowrap'>伙伴编号</th>
+            <th class='text-left nowrap'>奖励</th>
+            <th class='text-left nowrap'>机具SN</th>
+            <th class='text-left nowrap'>商户名称</th>
+            <th class='text-left nowrap'>详情</th>
+            <th class='text-left nowrap'>时间</th>
+        </tr>
+        </thead>
+        {/notempty}
+        <tbody>
+        {foreach $list as $key=>$vo}
+        <tr>
+            <td class='list-table-check-td think-checkbox'>
+                <label><input class="list-check-box" value='{$vo.id}' type='checkbox'></label>
+            </td>
+            <td class='text-left'>{$vo.username}</td>
+            <td class='text-left'>{$vo.phone}</td>
+            <td class='text-left'>{$vo.pinvite_code}</td>
+            <td class='text-left'>{$vo.money}</td>
+            <td class='text-left'>{$vo.extends}</td>
+            <td class='text-left'>{$vo.shanghu_name}</td>
+            <td class='text-left'>{$vo.content}</td>
+            <td class='text-left'>{$vo.create_at|format_datetime}</td>
+            <td class='text-left'>
+
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+    {empty name='list'}<span class="notdata">没有记录哦</span>{else}{$pagehtml|raw|default=''}{/empty}
+</div>
+{/block}

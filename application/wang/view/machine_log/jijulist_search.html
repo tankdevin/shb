@@ -1,0 +1,31 @@
+<fieldset>
+    <legend>条件搜索</legend>
+    <form class="layui-form layui-form-pane form-search" action="{:request()->url()}" onsubmit="return false" method="get" autocomplete="off">
+        <div class="layui-form-item layui-inline">
+            <label class="layui-form-label">SN码</label>
+            <div class="layui-input-inline">
+                <input name="machine_no" value="{$Think.get.machine_no|default=''}" placeholder="请输入商户编号" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item layui-inline">
+            <label class="layui-form-label">机具类型</label>
+            <div class="layui-input-inline">
+                <select class="layui-select" name="type">
+                    {foreach [''=>'- 全部状态 -','1'=>'入库', '2'=> '出库' ,'3'=>'激活', '7'=>'转移'] as $k=>$v}
+                    {eq name='Think.get.type' value='$k.""'}
+                    <option selected value="{$k}">{$v}</option>
+                    {else}
+                    <option value="{$k}">{$v}</option>
+                    {/eq}
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item layui-inline">
+            <button class="layui-btn layui-btn-primary"><i class="layui-icon">&#xe615;</i> 搜 索</button>
+        </div>
+    </form>
+    <script>form.render()</script>
+</fieldset>

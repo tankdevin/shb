@@ -1,0 +1,197 @@
+{extend name='admin@main'}
+
+{block name="content"}
+<div class="think-box-shadow">
+    <fieldset>
+        <legend>条件搜索</legend>
+        <form class="layui-form layui-form-pane form-search" action="{:request()->url()}" onsubmit="return false" method="get" autocomplete="off">
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">伙伴名字</label>
+                <div class="layui-input-inline">
+                    <input name="username" value="{$Think.get.username|default=''}" placeholder="伙伴名字" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">伙伴手机</label>
+                <div class="layui-input-inline">
+                    <input name="phone" value="{$Think.get.phone|default=''}" placeholder="伙伴手机" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">伙伴编号</label>
+                <div class="layui-input-inline">
+                    <input name="invite_code" value="{$Think.get.invite_code|default=''}" placeholder="伙伴编号" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">推荐人名字</label>
+                <div class="layui-input-inline">
+                    <input name="tuijianname" value="{$Think.get.tuijianname|default=''}" placeholder="伙伴名字" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">推荐人编号</label>
+                <div class="layui-input-inline">
+                    <input name="tuijianid" value="{$Think.get.tuijianid|default=''}" placeholder="伙伴编号" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">会员级别</label>
+                <div class="layui-input-inline">
+                    <select class="layui-select" name="vip_level">
+                        <option selected value="">全部</option>
+                        {foreach $userlaver as $k=>$v}
+                        {eq name='Think.get.vip_level' value='$v.id'}
+                        <option selected value="{$v.id}">{$v.name}</option>
+                        {else}
+                        <option value="{$v.id}">{$v.name}</option>
+                        {/eq}
+                        {/foreach}
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">伙伴版本</label>
+                <div class="layui-input-inline">
+                    <input name="ver" value="{$Think.get.ver|default=''}" placeholder="1.0输入1，2.0输入2" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">时间</label>
+                <div class="layui-input-inline">
+                    <input name="create_at" value="{$Think.get.create_at|default=''}" placeholder="请选择发送时间" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <button class="layui-btn layui-btn-primary"><i class="layui-icon">&#xe615;</i> 搜 索</button>
+                <a href='{:url("excel/memberlist")}?tuijianname={$Think.get.tuijianname|default=""}&tuijianid={$Think.get.tuijianid|default=""}&vip_level={$Think.get.vip_level|default=""}&create_at={$Think.get.create_at|default=""}' class="layui-btn layui-btn-primary layui-select-disabled"><i class="layui-icon layui-icon-export"></i> 导 出</a>
+            </div>
+        </form>
+        <script>
+            form.render();
+            laydate.render({range: true, elem: '[name="create_at"]'})
+        </script>
+    </fieldset>
+    <table class="layui-table margin-top-10" lay-skin="line">
+        {notempty name='list'}
+        <thead>
+        <tr>
+            <th class='list-table-check-td think-checkbox'>
+                <input data-auto-none data-check-target='.list-check-box' type='checkbox'>
+            </th>
+             <th class='text-left nav-text'>ID</th>
+            <th class='text-left nav-text'>伙伴姓名</th>
+            <th class='text-left nav-text'>伙伴编号</th>
+            <th class='text-left nav-text'>伙伴级别</th>
+            <th class='text-left nav-text'>时间</th>
+            <th class='text-left nav-text'>手机号</th>
+            <th class='text-left nav-text'>是否实名</th>
+            <th class='text-left nav-text'>推荐人姓名</th>
+            <th class='text-left nav-text'>推荐人编号</th>
+            <th class='text-left nav-text'>推荐人级别</th>
+            
+            
+            <th class='text-left nav-text'>入库</th>
+            <th class='text-left nav-text'>出库</th>
+            <th class='text-left nav-text'>已激活机具数</th>
+            
+            
+            <th class='text-left nav-text'>未激活机具数</th>
+            <th class='text-left nav-text'>商户转入</th>
+            <th class='text-left nav-text'>商户转出</th>
+            
+            
+            <th class='text-left nav-text'>我的积分</th>
+            <th class='text-left nav-text'>推荐奖</th>
+            <th class='text-left nav-text'>分润奖</th>
+            <!-- <th class='text-left nav-text'>补贴显示</th>
+            <th class='text-left nav-text'>销售显示</th>
+            <th class='text-left nav-text'>分润显示</th>
+            <th class='text-left nav-text'>押金显示</th>
+            <th class='text-left nav-text'>积分显示</th>
+            <th class='text-left nav-text'>展业显示</th> -->
+            <th class='text-left nav-text'></th>
+        </tr>
+        </thead>
+        {/notempty}
+        <tbody>
+        {foreach $list as $key=>$vo}
+        <tr>
+            <td class='list-table-check-td think-checkbox'>
+                <label><input class="list-check-box" value='{$vo.id}' type='checkbox'></label>
+            </td>
+             <td class='text-left nowrap'>
+                <div class="inline-block">{$vo.id}</div>
+            </td>
+            <td class='text-left nowrap'>
+                <div class="inline-block">{$vo.username|default='--'}</div>
+            </td>
+            <td class='text-left'>{$vo.invite_code|default='--'}</td>
+            {if $vo.ver eq 1}
+            <td class='text-left'>{$vo.vip_manual|manuallaver}</td>
+            {else}
+            <td class='text-left'>{$vo.vip_level|memberlaver}</td>
+            {/if}
+            <td class='text-left'>{$vo.create_at|format_datetime}</td>
+            <td class='text-left'>{$vo.phone}</td>
+            {if $vo.card_type eq 1}<td class='text-left' style="color: #00B83F;">认证通过</td>{else}<td class='text-left' style="color:red;">未认证</td>{/if}
+
+            <td class='text-left'>{$vo.tuijianname}</td>
+            <td class='text-left'>{$vo.tuijianno}</td>
+            {if $vo.ver eq 1}
+            <td class='text-left'>{$vo.tuijianjibie|manuallaver}</td>
+            {else}
+            <td class='text-left'>{$vo.tuijianjibie|memberlaver}</td>
+            {/if}
+            
+            
+            <td class='text-left'>{$vo.ruku}</td>
+            <td class='text-left'>{$vo.chuku}</td>
+            <td class='text-left'>{$vo.jihuois}</td>
+            
+            
+            <td class='text-left'>{$vo.jihuono}</td>
+            <td class='text-left'>{$vo.zhuanru}</td>
+            <td class='text-left'>{$vo.zhuanchu}</td>
+            
+            
+            <td class='text-left'>{$vo.integral}</td>
+            <td class='text-left'>{$vo.recommend_prize}</td>
+            <td class='text-left'>{$vo.profit_prize}</td>
+            <td class='text-left'>
+                <!--{if auth("wang/member/memberguanxi")}
+                <a data-dbclick class="layui-btn layui-btn-sm" data-open='{:url("memberguanxi")}?id={$vo.id}'>关系</a>
+                {else}
+                <a data-tips-text="您没有权限哦！" class="layui-btn layui-btn-sm layui-btn-primary layui-disabled">关系</a>
+                {/if}-->
+
+                {if auth("wang/member/memberxinxi")}
+                <a data-title="信息修改" class="layui-btn layui-btn-sm" data-modal='{:url("memberxinxi")}?id={$vo.id}'>修改</a>
+                {/if}
+
+                <a data-dbclick class="layui-btn layui-btn-sm" data-open='{:url("memberinfo")}?id={$vo.id}'>信息</a>
+               <!-- <a data-dbclick class="layui-btn layui-btn-warm" data-open='{:url("memberinfo")}?id={$vo.id}'>积分明细</a>-->
+
+                 {if auth("wang/member/memberjine")}
+                <a data-title="资金调节" class="layui-btn layui-btn-sm" data-modal='{:url("memberjine")}?id={$vo.id}'>资金调节</a>
+                {/if} 
+				{if $vo.ver eq 1}
+					<a data-title="设置等级" class="layui-btn layui-btn-sm" data-modal='{:url("memberver")}?id={$vo.id}'>设置等级</a>
+				{else}
+					<a data-title="设置等级" class="layui-btn layui-btn-sm" data-modal='{:url("membertver")}?id={$vo.id}'>设置等级</a>
+				{/if}
+				<a data-title="冻结管理" class="layui-btn layui-btn-sm" data-modal='{:url("memberdongjie")}?id={$vo.id}'>冻结管理</a>
+				{if $vo.ver eq 1}
+					<a data-title="提现配置" class="layui-btn layui-btn-sm" data-modal='{:url("membertixian")}?id={$vo.id}'>提现配置</a>
+				{/if}
+
+
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+    {empty name='list'}<span class="notdata">没有记录哦</span>{else}{$pagehtml|raw|default=''}{/empty}
+</div>
+{/block}

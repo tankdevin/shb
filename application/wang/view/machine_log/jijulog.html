@@ -1,0 +1,52 @@
+{extend name='admin@main'}
+
+{block name="button"}
+<!--{if auth("wang/shanghu/add")}
+<button data-modal='{:url("shanghulistadd")}' data-title="添加机具" class='layui-btn layui-btn-sm layui-btn-primary'>添加机具</button>
+{/if}-->
+{/block}
+
+{block name="content"}
+<div class="think-box-shadow">
+    {include file='machine_log/jijulist_search'}
+    <table class="layui-table margin-top-10" lay-skin="line">
+        {notempty name='list'}
+        <thead>
+        <tr>
+            <th class='text-left nowrap'>划拨人</th>
+            <th class='text-left nowrap'>接收人</th>
+            <th class='text-left nowrap'>类型</th>
+            <th class='text-left nowrap'>机具SN</th>
+            <th class="text-center">详情</th>
+            <th class="text-center"> 划拨时间</th>
+            <th></th>
+
+        </tr>
+        </thead>
+        {/notempty}
+        <tbody>
+        {foreach $list as $key=>$vo}
+        <tr>
+            <td class='text-left nowrap'>
+                {$vo.form_mid|shoujihao}
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.mid|shoujihao}
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.type|zhuangtai}
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.machine_no}
+            </td>
+            <td class='text-center nowrap'>{$vo.yuanyin}</td>
+            <td class='text-center nowrap'>{$vo.create_time|format_datetime}</td>
+            <td class='text-left nowrap'>
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+    {empty name='list'}<span class="notdata">没有记录哦</span>{else}{$pagehtml|raw|default=''}{/empty}
+</div>
+{/block}

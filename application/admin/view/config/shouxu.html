@@ -1,0 +1,62 @@
+<form onsubmit="return false" data-auto="true" action="{:url()}" method="post" class='layui-form layui-card' autocomplete="off">
+    <div class="layui-card-body padding-left-40">
+
+        <div class="layui-form-item">
+            <label class="relative block">
+                <span class="color-green font-w7">激活奖税费(%)</span>
+                <input name="activation_prize_xf" required placeholder="激活奖税费(%)" value="{:sysconf('activation_prize_xf')}" class="layui-input">
+            </label>
+        </div>
+        <div class="layui-form-item">
+            <label class="relative block">
+                <span class="color-green font-w7">推荐奖税费(%)</span>
+                <input name="recommend_prize_xf" required placeholder="推荐奖税费(%)" value="{:sysconf('recommend_prize_xf')}" class="layui-input">
+            </label>
+        </div>
+        <div class="layui-form-item">
+            <label class="relative block">
+                <span class="color-green font-w7">分润奖税费(%)</span>
+                <input name="profit_prize_xf" required placeholder="分润奖税费(%)" value="{:sysconf('profit_prize_xf')}" class="layui-input">
+            </label>
+        </div>
+        <div class="layui-form-item">
+            <label class="relative block">
+                <span class="color-green font-w7">活动奖税费(%)</span>
+                <input name="activity_prize_xf" required placeholder="活动奖税费(%)" value="{:sysconf('activity_prize_xf')}" class="layui-input">
+            </label>
+        </div>
+        <!-- <div class="layui-form-item">
+            <label class="relative block">
+                <span class="color-green font-w7">达标奖税费(%)</span>
+                <input name="standard_prize_xf" required placeholder="达标奖税费(%)" value="{:sysconf('standard_prize_xf')}" class="layui-input">
+            </label>
+        </div> -->
+        <div class="layui-form-item">
+            <label class="relative block">
+                <span class="color-green font-w7">团队奖税费(%),不收税费写入0</span>
+                <input name="team_prize_xf" required placeholder="团队奖税费(%),不收税费写入0" value="{:sysconf('team_prize_xf')}" class="layui-input">
+            </label>
+        </div>
+        <div class="layui-form-item">
+            <label class="relative block">
+                <span class="color-green font-w7">提现手续费：元/笔</span>
+                <input name="tx_xf" required placeholder="提现手续费" value="{:sysconf('tx_xf')}" class="layui-input">
+            </label>
+        </div>
+        <div class="layui-form-item">
+            <label class="relative block">
+                <span class="color-green font-w7">提现扣货款(%)：提现金额扣除税和手续费后用来扣货款的比例</span>
+                <input name="tx_payment" required placeholder="提现扣货款" value="{:sysconf('tx_payment')}" class="layui-input">
+            </label>
+        </div>
+
+
+        <div class="hr-line-dashed"></div>
+
+        <div class="layui-form-item text-center">
+            <button class="layui-btn" type="submit">保存配置</button>
+            <button class="layui-btn layui-btn-danger" type='button' data-confirm="确定要取消修改吗？" data-close>取消修改</button>
+        </div>
+    </div>
+
+</form>

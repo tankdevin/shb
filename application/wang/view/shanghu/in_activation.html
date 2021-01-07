@@ -1,0 +1,34 @@
+<form onsubmit="return false;" action="{:request()->url()}" data-auto="true" method="post" class='layui-form layui-card' autocomplete="off">
+
+    <div class="layui-card-body">
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">SN编号</label>
+            <label class="layui-col-xs10">
+                <input name="machine_no" value='' required="required" placeholder="请输入SN编号" class="layui-input">
+            </label>
+        </div>
+    </div>
+
+    <div class="layui-card-body">
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">激活时间</label>
+            <label class="layui-col-xs10">
+            	<input type="text" class="layui-input" required="required" id="test11" name="txnTm"  placeholder="请选择激活时间 ">
+            </label>
+        </div>
+    </div>
+
+    <div class="hr-line-dashed"></div>
+    <div class="layui-form-item text-center">
+        <button class="layui-btn" type='submit'>保存数据</button>
+        <button class="layui-btn layui-btn-danger" type='button' data-confirm="确定要取消编辑吗？" data-close>取消编辑</button>
+    </div>
+</form>
+<script>
+    form.render();
+    laydate.render({
+        elem: '#test11'
+        ,type: 'datetime'
+        ,format: 'yyyyMMddHHmmss'
+      });
+</script>

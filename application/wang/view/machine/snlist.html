@@ -1,0 +1,105 @@
+{extend name='admin@main'}
+
+{block name="button"}
+{if auth("wang/shanghu/add")}
+<button data-modal='{:url("snadd")}' data-title="添加机具" class='layui-btn layui-btn-sm layui-btn-primary'>批量生成SN码</button>
+{/if}
+
+{if auth("wang/machine/jijulist")}
+<button data-action='{:url("jijudelad")}' data-rule="id#{key}" class='layui-btn layui-btn-sm layui-btn-primary'>删除SN码</button>
+{/if}
+{/block}
+
+{block name="content"}
+<div class="think-box-shadow">
+    <fieldset>
+        <legend>条件搜索</legend>
+        <form class="layui-form layui-form-pane form-search" action="{:request()->url()}" onsubmit="return false" method="get" autocomplete="off">
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">SN码</label>
+                <div class="layui-input-inline">
+                    <input name="machine_no" value="{$Think.get.machine_no|default=''}" placeholder="请输入SN码" class="layui-input">
+                </div>
+            </div>
+
+            <!--<div class="layui-form-item layui-inline">
+                <label class="layui-form-label">机具类型</label>
+                <div class="layui-input-inline">
+                    <select class="layui-select" name="type">
+                        {foreach [''=>'- 全部状态 -','0'=>'已划拨' ,'1'=>'未划拨'] as $k=>$v}
+                        {eq name='Think.get.type' value='$k.""'}
+                        <option selected value="{$k}">{$v}</option>
+                        {else}
+                        <option value="{$k}">{$v}</option>
+                        {/eq}
+                        {/foreach}
+                    </select>
+                </div>
+            </div>-->
+
+            <div class="layui-form-item layui-inline">
+                <button class="layui-btn layui-btn-primary"><i class="layui-icon">&#xe615;</i> 搜 索</button>
+                <a href='{:url("excel/snlist")}?machine_no={$Think.get.machine_no|default=""}' class="layui-btn layui-btn-primary layui-select-disabled"><i class="layui-icon layui-icon-export"></i> 导 出</a>
+            </div>
+        </form>
+        <script>form.render()</script>
+    </fieldset>
+    <table class="layui-table margin-top-10" lay-skin="line">
+        {notempty name='list'}
+        <thead>
+        <tr>
+            <th class='list-table-check-td think-checkbox'>
+                <input data-auto-none data-check-target='.list-check-box' type='checkbox'>
+            </th>
+            <th class='text-left nowrap'>编号</th>
+            <th class='text-left nowrap'>持有人</th>
+            <th class='text-left nowrap'>SN码</th>
+            <th class='text-left nowrap'>版本</th>
+            <th class='text-left nowrap'>类型</th>
+            <th class="text-center">入网时间</th>
+            <th></th>
+        </tr>
+        </thead>
+        {/notempty}
+        <tbody>
+        {foreach $list as $key=>$vo}
+        <tr>
+            <td class='list-table-check-td think-checkbox'>
+                <input class="list-check-box" value='{$vo.id}' type='checkbox'>
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.id}
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.mid|shoujihao}
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.machine_no}
+            </td>
+            <td class='text-left nowrap'>
+                {if $vo.ver eq 1}
+                <span>1.0</span><br>
+                {else}
+                <span>2.0</span>
+                {/if}
+            </td>
+            <td class='text-left nowrap'>
+                {if $vo.is_huabo eq 1}
+                <span class="layui-badge layui-bg-green">未划拨</span><br>
+                {else}
+                <span class="layui-badge layui-bg-red">已划拨</span>
+                {/if}
+            </td>
+            <td class='text-center nowrap'>{$vo.create_time|format_datetime}</td>
+            <td class='text-left nowrap'>
+                {if $vo.is_huabo eq 1}
+                    <a data-title="删除" class="layui-btn layui-bg-red" data-modal='{:url("sndelad")}?id={$vo.id}'>删除</a>
+                {/if}
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+    {empty name='list'}<span class="notdata">没有记录哦</span>{else}{$pagehtml|raw|default=''}{/empty}
+</div>
+{/block}

@@ -1,0 +1,49 @@
+{extend name='admin@main'}
+
+{block name="content"}
+<div class="think-box-shadow">
+    <table class="layui-table margin-top-10" lay-skin="line">
+        {notempty name='list'}
+        <thead>
+        <tr>
+            <th class='list-table-check-td think-checkbox'>
+                <input data-auto-none data-check-target='.list-check-box' type='checkbox'>
+            </th>
+            <th class='text-left nowrap'>商户名称</th>
+            <th class='text-left nowrap'>商户编号</th>
+            <th class='text-left nowrap'>所属用户手机号</th>
+            <th class="text-center">入网时间</th>
+            <th></th>
+        </tr>
+        </thead>
+        {/notempty}
+        <tbody>
+        {foreach $list as $key=>$vo}
+        <tr>
+            <td class='list-table-check-td think-checkbox'>
+                <input class="list-check-box" value='{$vo.id}' type='checkbox'>
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.shanghu_name|default=''}
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.machine_no}
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.mid|shoujihao}
+            </td>
+          <!--  <td class='text-center nowrap'>
+                {eq name='vo.status' value='0'}<span class="layui-badge">已禁用</span>{else}<span class="layui-badge layui-bg-green">使用中</span>{/eq}<br>
+            </td>-->
+            <td class='text-center nowrap'>{$vo.create_time|format_datetime}</td>
+            <td class='text-left nowrap'>
+                <a class="layui-btn layui-btn-sm layui-btn-danger" data-action="{:url('ruwangisnoguo')}" data-value="id#{$vo.id};status#0">禁 用</a>
+                <a class="layui-btn layui-btn-sm layui-btn-warm" data-action="{:url('ruwangisguo')}" data-value="id#{$vo.id};status#1">启 用</a>
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+    {empty name='list'}<span class="notdata">没有记录哦</span>{else}{$pagehtml|raw|default=''}{/empty}
+</div>
+{/block}

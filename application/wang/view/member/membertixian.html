@@ -1,0 +1,59 @@
+<form onsubmit="return false;" action="{:request()->url()}" data-auto="true" method="post" class='layui-form layui-card' autocomplete="off">
+
+    <div class="layui-card-body">
+
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs4 think-form-label color-red">*注意:不填的项点击保存默认为0*</label>
+        </div>
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs3 think-form-label">用户手机</label>
+            <label class="layui-col-xs8">
+                <input name="mid" value='{$id|shoujihao}' readonly placeholder="用户手机" class="layui-input">
+            </label>
+        </div>
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs3 think-form-label color-green">激活奖税费(%)</label>
+            <label class="layui-col-xs8">
+                <input name="activation_xf" value='{$info.activation_xf|default=""}' placeholder="激活奖税费" class="layui-input">
+            </label>
+        </div>
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs3 think-form-label color-green">推荐奖税费(%)</label>
+            <label class="layui-col-xs8">
+                <input name="recommend_xf" value='{$info.recommend_xf|default=""}' placeholder="推荐奖税费" class="layui-input">
+            </label>
+        </div>
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs3 think-form-label color-green">分润奖税费(%)</label>
+            <label class="layui-col-xs8">
+                <input name="profit_xf" value='{$info.profit_xf|default=""}' placeholder="分润奖税费" class="layui-input">
+            </label>
+        </div>
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs3 think-form-label color-green">活动奖税费(%)</label>
+            <label class="layui-col-xs8">
+                <input name="activity_xf" value='{$info.activity_xf|default=""}' placeholder="活动奖税费" class="layui-input">
+            </label>
+        </div>
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs3 think-form-label color-green">团队奖税费(%)</label>
+            <label class="layui-col-xs8">
+                <input name="team_xf" value='{$info.team_xf|default=""}' placeholder="团队奖税费" class="layui-input">
+            </label>
+        </div>
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs3 think-form-label color-green">提现手续费：元/笔</label>
+            <label class="layui-col-xs8">
+                <input name="tx_xf" value='{$info.tx_xf|default=""}' placeholder="提现手续费" class="layui-input">
+            </label>
+        </div>
+
+    </div>
+
+    <div class="hr-line-dashed"></div>
+    <div class="layui-form-item text-center">
+        {notempty name='vo.id'}<input type='hidden' value='{$vo.id}' name='id'>{/notempty}
+        <button class="layui-btn" type='submit'>保存数据</button>
+        <button class="layui-btn layui-btn-danger" type='button' data-confirm="确定要取消编辑吗？" data-close>取消编辑</button>
+    </div>
+</form>

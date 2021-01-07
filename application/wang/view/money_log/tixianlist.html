@@ -1,0 +1,64 @@
+{extend name='admin@main'}
+
+{block name="content"}
+<div class="think-box-shadow">
+    {include file='money_log/tixian_search'}
+    <table class="layui-table margin-top-10" lay-skin="line">
+        {notempty name='list'}
+        <thead>
+        <tr>
+            <th class='list-table-check-td think-checkbox'>
+                <input data-auto-none data-check-target='.list-check-box' type='checkbox'>
+            </th>
+            <th class='text-left nowrap'>会员手机</th>
+            <th class='text-left nowrap'>金额</th>
+            <th class='text-left nowrap'>提现信息</th>
+            <th class='text-left nowrap'>说明</th>
+            <th class='text-left nowrap'>提现时间</th>
+            <th class='text-left nowrap'>审批时间</th>
+            <th class='text-left nowrap'>状态</th>
+            <th class='text-left nowrap'></th>
+        </tr>
+        </thead>
+        {/notempty}
+        <tbody>
+        {foreach $list as $key=>$vo}
+        <tr>
+            <td class='list-table-check-td think-checkbox'>
+                <label><input class="list-check-box" value='{$vo.id}' type='checkbox'></label>
+            </td>
+            <td class='text-left'>{$vo.phone}</td>
+            <td class='text-left'>提现金额：{$vo.money}<br>税：{$vo.ptpoint},手续费{$vo.formalities},货款{$vo.payment}<br>实到金额：{$vo.money-$vo.ptpoint-$vo.formalities-$vo.payment}</td>
+            <td class='text-left'>姓名：{$vo.bank_username}<br>银行账号：{$vo.bank_num}<br>开户行：{$vo.bank_name}</td>
+            <td class='text-left'>
+                {$vo.content}
+            </td>
+            <td class='text-left'>{$vo.create_at|format_datetime}</td>
+            <td class='text-left'>{$vo.update_at|format_datetime}</td>
+            <td class='text-left'>
+                {if $vo.status eq 0}<span style="color:black">未审核</span>
+                {elseif $vo.status eq 1}<span style="color:blue">通过，打款中</span>
+                {elseif $vo.status eq 2}<span style="color:red">打款失败</span>
+                {elseif $vo.status eq 3}<span style="color:green">打款成功</span>
+                {elseif $vo.status eq 4}<span style="color:gray">拒绝</span>
+                {/if}
+            </td>
+            <td class='text-left'>
+                {if $vo.status eq 0 || $vo.status eq 2}
+                <a data-title="通过" class="layui-btn layui-btn-sm" data-modal='{:url("tixianup")}?id={$vo.id}&typead=1'>通过</a>
+                {/if}
+                {if $vo.status eq 0 || $vo.status eq 2}
+                <a data-title="拒绝" class="layui-btn layui-btn-sm layui-bg-red" data-modal='{:url("tixiandel")}?id={$vo.id}'>拒绝</a>
+                {/if}
+                {if $vo.status eq 2}
+                <a data-title="修改" class="layui-btn layui-btn-sm layui-bg-blue" data-modal='{:url("tixianedit")}?id={$vo.id}'>修改账户</a>
+                {/if}
+            </td>
+
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+    {empty name='list'}<span class="notdata">没有记录哦</span>{else}{$pagehtml|raw|default=''}{/empty}
+</div>
+{/block}

@@ -1,0 +1,106 @@
+{extend name='admin@main'}
+
+{block name="content"}
+<div class="think-box-shadow">
+    <fieldset>
+        <legend>条件搜索</legend>
+        <form class="layui-form layui-form-pane form-search" action="{:request()->url()}" onsubmit="return false" method="get" autocomplete="off">
+
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">伙伴手机</label>
+                <div class="layui-input-inline">
+                    <input name="phone" value="{$Think.get.phone|default=''}" placeholder="伙伴手机" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">伙伴编号</label>
+                <div class="layui-input-inline">
+                    <input name="invite_code" value="{$Think.get.invite_code|default=''}" placeholder="伙伴编号" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">会员级别</label>
+                <div class="layui-input-inline">
+                    <select class="layui-select" name="vip_level">
+                        <option selected value="">全部</option>
+                        {foreach $userlaver as $k=>$v}
+                        {eq name='Think.get.vip_level' value='$v.id'}
+                        <option selected value="{$v.id}">{$v.name}</option>
+                        {else}
+                        <option value="{$v.id}">{$v.name}</option>
+                        {/eq}
+                        {/foreach}
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">时间</label>
+                <div class="layui-input-inline">
+                    <input name="create_at" value="{$Think.get.create_at|default=''}" placeholder="请选择时间" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <button class="layui-btn layui-btn-primary"><i class="layui-icon">&#xe615;</i> 搜 索</button>
+                <a href='{:url("excel/jiaoyilist")}?phone={$Think.get.phone|default=""}&invite_code={$Think.get.invite_code|default=""}&level={$Think.get.vip_level|default=""}&create_at={$Think.get.create_at|default=""}' class="layui-btn layui-btn-primary layui-select-disabled"><i class="layui-icon layui-icon-export"></i> 导 出</a>
+            </div>
+        </form>
+        <script>
+            form.render();
+            laydate.render({range: true, elem: '[name="create_at"]'})
+        </script>
+    </fieldset>
+    <table class="layui-table margin-top-10" lay-skin="line">
+        {notempty name='list'}
+        <thead>
+        <tr>
+            <th class='list-table-check-td think-checkbox'>
+                <input data-auto-none data-check-target='.list-check-box' type='checkbox'>
+            </th>
+            <th class='text-left nowrap'>伙伴姓名</th>
+            <th class='text-left nowrap'>伙伴手机</th>
+            <th class='text-left nowrap'>伙伴编号</th>
+            <th class='text-left nowrap'>伙伴级别</th>
+
+
+
+            <th class='text-left '>总交易额</th>
+            <th class='text-left '>POS机交易额</th>
+            <th class='text-left '>POS机刷卡笔数</th>
+            <th class='text-left '>扫码交易额</th>
+            <th class='text-left '>扫码刷卡笔数</th>
+            <th class='text-left '>闪付交易额</th>
+            <th class='text-left '>闪付刷卡笔数</th>
+            <th class='text-left nowrap'></th>
+        </tr>
+        </thead>
+        {/notempty}
+        <tbody>
+        {foreach $list as $key=>$vo}
+        <tr>
+            <td class='list-table-check-td think-checkbox'>
+                <label><input class="list-check-box" value='{$vo.id}' type='checkbox'></label>
+            </td>
+            <td class='text-left'>{$vo.username}</td>
+            <td class='text-left'>{$vo.phone}</td>
+            <td class='text-left'>{$vo.invite_code}</td>
+            <td class='text-left'>{$vo.vip_level|memberlaver}</td>
+
+            <td class='text-left'>{$vo.sum}</td>
+            <td class='text-left'>{$vo.pos}</td>
+            <td class='text-left'>{$vo.posad}</td>
+
+            <td class='text-left'>{$vo.shaoma}</td>
+            <td class='text-left'>{$vo.shaomaad}</td>
+            <td class='text-left'>{$vo.shanfu}</td>
+            <td class='text-left'>{$vo.shanfuad}</td>
+            <td class='text-left'>
+
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+    {empty name='list'}<span class="notdata">没有记录哦</span>{else}{$pagehtml|raw|default=''}{/empty}
+</div>
+{/block}

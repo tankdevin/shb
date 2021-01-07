@@ -1,0 +1,159 @@
+{extend name='admin@main'}
+{block name="content"}
+<div class="think-box-shadow">
+    <fieldset>
+        <legend>条件搜索</legend>
+        <form class="layui-form layui-form-pane form-search" action="{:request()->url()}" onsubmit="return false" method="get" autocomplete="off">
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">SN码</label>
+                <div class="layui-input-inline">
+                    <input name="machine_no" value="{$Think.get.machine_no|default=''}" placeholder="请输入SN码" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">时间</label>
+                <div class="layui-input-inline">
+                    <input name="create_at" value="{$Think.get.create_at|default=''}" placeholder="请选择交易时间" class="layui-input">
+                </div>
+            </div>
+            <!--<div class="layui-form-item layui-inline">
+                <label class="layui-form-label">机具类型</label>
+                <div class="layui-input-inline">
+                    <select class="layui-select" name="type">
+                        {foreach [''=>'- 全部状态 -','0'=>'已划拨' ,'1'=>'未划拨'] as $k=>$v}
+                        {eq name='Think.get.type' value='$k.""'}
+                        <option selected value="{$k}">{$v}</option>
+                        {else}
+                        <option value="{$k}">{$v}</option>
+                        {/eq}
+                        {/foreach}
+                    </select>
+                </div>
+            </div>-->
+
+            <div class="layui-form-item layui-inline">
+                <button class="layui-btn layui-btn-primary"><i class="layui-icon">&#xe615;</i> 搜 索</button>
+            </div>
+        </form>
+        <script>form.render()</script>
+        <script>
+            form.render();
+            laydate.render({range: true, elem: '[name="create_at"]'})
+        </script>
+    </fieldset>
+    <table class="layui-table margin-top-10" lay-skin="line">
+        {notempty name='list'}
+        <thead>
+        <tr>
+            <th class='list-table-check-td think-checkbox'>
+                <input data-auto-none data-check-target='.list-check-box' type='checkbox'>
+            </th>
+            <th class='text-left nowrap'>编号</th>
+            <th class='text-left nowrap'>SN码</th>
+            <th class='text-left nowrap'>交易流水号</th>
+            <th class="text-center">交易时间</th>
+            <th class="text-center">交易类型</th>
+            <th class="text-center">交易结果</th>
+            <th class="text-center">交易卡号</th>
+            <th class="text-center">卡类型</th>
+            <th class="text-center">交易金额</th>
+            <th class="text-center">商户手续费</th>
+            <th class="text-center">快提手续费</th>
+            <th class="text-center">终端号</th>
+            <th class="text-center">批次号</th>
+            <th class="text-center">终端流水号</th>
+            <th class="text-center">商户号</th>
+            <th class="text-center">商户名称</th>
+
+            <th class="text-center">添加时间</th>
+            <th class="text-center">是否处理</th>
+            <th class="text-center">导入时间</th>
+        </tr>
+        </thead>
+        {/notempty}
+        <tbody>
+        {foreach $list as $key=>$vo}
+        <tr>
+            <td class='list-table-check-td think-checkbox'>
+                <input class="list-check-box" value='{$vo.id}' type='checkbox'>
+            </td>
+        <td class='text-center nowrap'>{$vo.id}</td>
+        <td class='text-center nowrap'>{$vo.snNo}</td>
+        <td class='text-center nowrap'>{$vo.logNo}</td>
+        <td class='text-center nowrap'><?php echo date('Y/m/d',strtotime($vo['txnTm']));?> 
+            <?php
+            $time = substr($vo['txnTm'],-6);
+            $chunks = str_split($time, 2);
+            $result = implode(':', $chunks);
+            echo '  '.$result;
+            ?>
+        </td>
+        <td class='text-center nowrap'>
+            <?php
+            if($vo['crdTyp'] == 'WX'){
+                echo "微信";
+            }elseif($vo['crdTyp'] == 'ZFB01'){
+                echo "支付宝";
+            }elseif($vo['crdTyp'] == 'SFT01'){
+                echo "盛付通";
+            }elseif($vo['crdTyp'] == 'CUP'){
+                echo "银行卡";
+            }elseif($vo['crdTyp'] == 'CUP01'){
+                echo "银联扫码支付";
+            }elseif($vo['crdTyp'] == 'CUP02'){
+                echo "银联静态扫码支付";
+            }elseif($vo['crdTyp'] == 'CUP03'){
+                echo "银联动态扫码支付";
+            }elseif($vo['crdTyp'] == 'NFC'){
+                echo "碰一碰";
+            }
+            ?>
+        </td>
+       
+        <td class='text-center nowrap'>
+            <?php
+            if($vo['ttxnSts'] == '00'){
+                echo "成功";
+            }else{
+                echo "被冲正";
+            }
+            ?>
+        </td>
+        <td class='text-center nowrap'>{$vo.crdNo}</td>
+        <td class='text-center nowrap'>
+            <?php
+            if($vo['crdFlg'] == '05'){
+                echo "借记卡";
+            }else{
+                echo "贷记卡";
+            }
+            ?>
+
+        </td>
+        <td class='text-center nowrap'>{$vo.txnAmt}</td>
+        <td class='text-center nowrap'>{$vo.mercFeeAmt}</td>
+        <td class='text-center nowrap'>{$vo.businessThrAmt}</td>
+        <td class='text-center nowrap'>{$vo.trmNo}</td>
+        <td class='text-center nowrap'>{$vo.batNo}</td>
+        <td class='text-center nowrap'>{$vo.cseqNo}</td>
+        <td class='text-center nowrap'>{$vo.mercId}</td>
+        <td class='text-center nowrap'>{$vo.mercNm}</td>
+        <td class='text-center nowrap'>{$vo.create_time}</td>
+        <td class='text-center nowrap'>
+            <?php
+                if($vo['is_chuli'] == 0){
+                    echo "未处理";
+                }elseif($vo['is_chuli'] == 1){
+                    echo "已处理";
+                }else{
+                    echo "未找到商户";
+                }
+            ?>
+        </td>
+        <td class='text-center nowrap'><?php echo date("Y-m-d H:i:s",$vo['update_time']);?></td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+        {empty name='list'}<span class="notdata">没有记录哦</span>{else}{$pagehtml|raw|default=''}{/empty}
+{/block}

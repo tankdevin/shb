@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <meta name="keywords" content="LXC">
+    <meta name="description" content="LXC">
+    <title>盛伙伴</title>
+    <link href="demo/download.css" rel="stylesheet">
+    <link href="demo/swiper-3.3.1.min.css" rel="stylesheet">
+    <link href="demo/ab.css" rel="stylesheet">
+    <style type="text/css">
+        .wechat_tip,
+        .wechat_tip>i {
+            position: absolute;
+            right: 10px
+        }
+        
+        .wechat_tip {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            background: #3ab2a7;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+            width: 135px;
+            height: 60px;
+            border-radius: 10px;
+            top: 15px
+        }
+        
+        .wechat_tip>i {
+            top: -10px;
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 12px solid #3ab2a7
+        }
+        
+        .mask img {
+            max-width: 100%;
+            height: auto
+        }
+    </style>
+    <script src="demo/zepto.min.js" type="text/javascript"></script>
+    <script src="demo/swiper.jquery.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        function install_app(_link) {
+            if (/iphone|ipad|ipod/i.test(navigator.userAgent)) {
+                document.getElementById('actions').innerHTML = '<button style="min-width:43px;width:43px;padding:12px 0;border-top-color:transparent;border-left-color:transparent" class="loading">&nbsp;</button>';
+                setTimeout("mobile_provision()", 6000);
+            }
+            location.href = _link;
+        }
+
+        function mobile_provision() {
+            document.getElementById('actions').innerHTML = '<p>安装后，请点击首页查看</p><button onclick="location.href=\'https://ff.189hj.cn/static/app/app.mobileprovision\'">立即信任</button>';
+        }
+    </script>
+</head>
+
+<body>
+    <span class="pattern left"><img src="demo/left.png"></span>
+    <span class="pattern right"><img src="demo/right.png"></span>
+    <div class="out-container">
+        <div class="main">
+            <header>
+                <div class="table-container">
+                    <div class="cell-container">
+                        <div class="app-brief">
+                            <div class="icon-container wrapper">
+                                <i class="icon-icon_path bg-path"></i>
+                                <span class="icon"><img src="demo/Umilogo.png" onerror="this.src='demo/qrcode.png'"></span>
+                                <span class="qrcode"><img src="demo/qrcode.png"></span>
+                            </div>
+                            <h1 class="name wrapper"><span class="icon-warp" style="margin-left:0px"><i class="icon-android"></i>盛伙伴</span></h1>
+                            <p class="scan-tips" style="margin-left:170px">扫描二维码下载<br />或用手机浏览器输入这个网址：<span class="text-black">http://umi.web368.cn/app.html</span></p>
+                            <div class="release-info">
+                                <p>0.0.7（Build 1）</p>
+                                <p>更新于：2020-07-10 16:00:00</p>
+                            </div>
+                            <div id="actions" class="actions">
+                                <button onclick="install_app('http://umi.web368.cn/app.apk')">下载安装</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+        </div>
+    </div>
+    <div class="mask" style="display:none"></div>
+</body>
+
+</html>

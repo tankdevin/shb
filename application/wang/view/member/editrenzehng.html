@@ -1,0 +1,29 @@
+<form onsubmit="return false;" action="{:request()->url()}" data-auto="true" method="post" class='layui-form layui-card' autocomplete="off">
+
+    <div class="layui-card-body">
+
+        <!-- <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs4 think-form-label color-red">*注意:不填的项点击保存默认为0*</label>
+        </div> -->
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs3 think-form-label color-green">银行卡号</label>
+            <label class="layui-col-xs8">
+                <input name="bank_num" required value='{$info.bank_num|default=""}' placeholder="银行卡号" class="layui-input">
+            </label>
+        </div>
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs3 think-form-label color-green">所属银行</label>
+            <label class="layui-col-xs8">
+                <input name="bank_name" required value='{$info.bank_name|default=""}' placeholder="所属银行" class="layui-input">
+            </label>
+        </div>
+
+    </div>
+
+    <div class="hr-line-dashed"></div>
+    <div class="layui-form-item text-center">
+        {notempty name='vo.id'}<input type='hidden' value='{$vo.id}' name='id'>{/notempty}
+        <button class="layui-btn" type='submit'>保存数据</button>
+        <button class="layui-btn layui-btn-danger" type='button' data-confirm="确定要取消编辑吗？" data-close>取消编辑</button>
+    </div>
+</form>

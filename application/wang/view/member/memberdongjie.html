@@ -1,0 +1,74 @@
+<form onsubmit="return false;" action="{:request()->url()}" data-auto="true" method="post" class='layui-form layui-card' autocomplete="off">
+
+    <div class="layui-card-body">
+		
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">激活奖</label>
+            {foreach ['0' => '冻结','1' => '正常'] as $k => $v}
+            {if $info.is_activation eq $k }
+            <label class="think-radio"><input type="radio" value="{$k}" name="is_activation" title="{$v}" checked lay-ignore> {$v}</label>
+            {else}
+            <label class="think-radio"><input type="radio" value="{$k}" name="is_activation" title="{$v}" lay-ignore> {$v}</label>
+            {/if} 
+            {/foreach}
+        </div>
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">推荐奖</label>
+            {foreach ['0' => '冻结','1' => '正常'] as $k => $v}
+            {if $info.is_recommend eq $k }
+            <label class="think-radio"><input type="radio" value="{$k}" name="is_recommend" title="{$v}" checked lay-ignore> {$v}</label>
+            {else}
+            <label class="think-radio"><input type="radio" value="{$k}" name="is_recommend" title="{$v}" lay-ignore> {$v}</label>
+            {/if} 
+            {/foreach}
+        </div>
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">分润奖</label>
+            {foreach ['0' => '冻结','1' => '正常'] as $k => $v}
+            {if $info.is_profit eq $k }
+            <label class="think-radio"><input type="radio" value="{$k}" name="is_profit" title="{$v}" checked lay-ignore> {$v}</label>
+            {else}
+            <label class="think-radio"><input type="radio" value="{$k}" name="is_profit" title="{$v}" lay-ignore> {$v}</label>
+            {/if} 
+            {/foreach}
+        </div>
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">活动奖</label>
+            {foreach ['0' => '冻结','1' => '正常'] as $k => $v}
+            {if $info.is_activity eq $k }
+            <label class="think-radio"><input type="radio" value="{$k}" name="is_activity" title="{$v}" checked lay-ignore> {$v}</label>
+            {else}
+            <label class="think-radio"><input type="radio" value="{$k}" name="is_activity" title="{$v}" lay-ignore> {$v}</label>
+            {/if} 
+            {/foreach}
+        </div>
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">达标奖</label>
+            {foreach ['0' => '冻结','1' => '正常'] as $k => $v}
+            {if $info.is_standard eq $k }
+            <label class="think-radio"><input type="radio" value="{$k}" name="is_standard" title="{$v}" checked lay-ignore> {$v}</label>
+            {else}
+            <label class="think-radio"><input type="radio" value="{$k}" name="is_standard" title="{$v}" lay-ignore> {$v}</label>
+            {/if} 
+            {/foreach}
+        </div>
+        <div class="layui-row margin-bottom-15">
+            <label class="layui-col-xs2 think-form-label">团队奖</label>
+            {foreach ['0' => '冻结','1' => '正常'] as $k => $v}
+            {if $info.is_team eq $k }
+            <label class="think-radio"><input type="radio" value="{$k}" name="is_team" title="{$v}" checked lay-ignore> {$v}</label>
+            {else}
+            <label class="think-radio"><input type="radio" value="{$k}" name="is_team" title="{$v}" lay-ignore> {$v}</label>
+            {/if} 
+            {/foreach}
+        </div>
+
+    </div>
+
+    <div class="hr-line-dashed"></div>
+    <div class="layui-form-item text-center">
+        {notempty name='vo.id'}<input type='hidden' value='{$vo.id}' name='id'>{/notempty}
+        <button class="layui-btn" type='submit'>保存数据</button>
+        <button class="layui-btn layui-btn-danger" type='button' data-confirm="确定要取消编辑吗？" data-close>取消编辑</button>
+    </div>
+</form>

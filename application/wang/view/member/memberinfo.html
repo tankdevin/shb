@@ -1,0 +1,162 @@
+{extend name='admin@main'}
+
+
+{block name='content'}
+
+<style>
+
+    .store-total-container {
+        font-size: 14px;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+    }
+
+    .store-total-container .store-total-icon {
+        top: 45%;
+        right: 8%;
+        font-size: 65px;
+        position: absolute;
+        color: rgba(255, 255, 255, 0.4);
+    }
+
+    .store-total-container .store-total-item {
+        color: #fff;
+        line-height: 4em;
+        padding: 15px 25px;
+        position: relative;
+    }
+
+    .store-total-container .store-total-item > div:nth-child(2) {
+        font-size: 46px;
+        line-height: 46px;
+    }
+
+</style>
+
+
+
+
+
+<div class="layui-row layui-col-space15">
+    <div class="layui-col-md6">
+        <div class="think-box-shadow">
+            <table class="layui-table" lay-skin="line" lay-even>
+                <caption class="text-left margin-bottom-15 font-s14">用户信息</caption>
+                <colgroup>
+                    <col width="30%">
+                </colgroup>
+                <tbody>
+                <tr>
+                    <td>昵称</td>
+                    <td>{$list.nickname}</td>
+                </tr>
+                <tr>
+                    <td>真实姓名</td>
+                    <td>{$list.username}</td>
+                </tr>
+                <tr>
+                    <td>手机</td>
+                    <td>{$list.phone}</td>
+                </tr>
+                <tr>
+                    <td>会员级别</td>
+                    <td>{$list.vip_level|memberlaver}</td>
+                </tr>
+                <tr>
+                    <td>推荐码</td>
+                    <td>{$list.invite_code}</td>
+                </tr>
+                <tr>
+                    <td>入网时间</td>
+                    <td>{$list.create_at|format_datetime}</td>
+                </tr>
+                <tr>
+                    <td>积分</td>
+                    <td>{$list.integral}</td>
+                </tr>
+                <tr>
+                    <td>活动积分</td>
+                    <td>{$list.activity_integral}</td>
+                </tr>
+                <tr>
+                    <td>激活奖</td>
+                    <td>{$list.activation_prize}</td>
+                </tr>
+                <tr>
+                    <td>推荐奖</td>
+                    <td>{$list.recommend_prize}</td>
+                </tr>
+                <tr>
+                    <td>分润奖</td>
+                    <td>{$list.profit_prize}</td>
+                </tr>
+                <tr>
+                    <td>活动奖</td>
+                    <td>{$list.activity_prize}</td>
+                </tr>
+                <tr>
+                    <td>达标奖</td>
+                    <td>{$list.standard_prize}</td>
+                </tr>
+                <tr>
+                    <td>团队奖</td>
+                    <td>{$list.team_prize}</td>
+                </tr>
+                <tr>
+                    <td>支付宝账号</td>
+                    <td>{$list.zfb_mobile}</td>
+                </tr>
+                <tr>
+                    <td>支付宝名称</td>
+                    <td>{$list.username}</td>
+                </tr>
+                <tr>
+                    <td>是否实名认证</td>
+                    <td>{if $list.card_type eq 1}是{else}否{/if}</td>
+                </tr>
+                {if $list.card_type eq 1}
+                <tr>
+                    <td>姓名：{$list.shiming.card_name}</td>
+                    <td>身份证：{$list.shiming.card_num}</td>
+                </tr>
+                <tr>
+                    <td>照片： <img data-tips-image style="width: 60px;" src="{$list.shiming.card_front}"></td>
+                    <td>照片：<img data-tips-image style="width: 60px;" src="{$list.shiming.card_back}"></td>
+                </tr>
+                {/if}
+                <tr>
+                    <td>是否企业认证</td>
+                    <td>{if $list.enter_type eq 1}是{else}否{/if}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="layui-col-md6">
+        <div class="think-box-shadow">
+            <table class="layui-table" lay-skin="line" lay-even>
+                <caption class="text-left margin-bottom-15 font-s14">地址列表</caption>
+                <colgroup>
+                    <col width="30%">
+                </colgroup>
+                <tbody>
+                <tr>
+                    <td>收件人</td>
+                    <td>手机</td>
+                    <td>详细地址</td>
+                    <td>是否默认</td>
+                </tr>
+                {foreach $list.address as $key=>$vo}
+                <tr>
+                    <td>{$vo.name}</td>
+                    <td>{$vo.mobile}</td>
+                    <td>{$vo.provinceid|provinceid}-{$vo.cityid|provinceid}-{$vo.countyid|provinceid}-{$vo.address}</td>
+                    <td style="color: red;">{if $vo.is_default eq 1}默认地址{/if}</td>
+                </tr>
+                {/foreach}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{/block}

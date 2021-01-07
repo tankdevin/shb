@@ -1,0 +1,23 @@
+<fieldset>
+    <legend>条件搜索</legend>
+    <form class="layui-form layui-form-pane form-search" action="{:request()->url()}" onsubmit="return false" method="get" autocomplete="off">
+        <div class="layui-form-item layui-inline">
+            <label class="layui-form-label">商户姓名</label>
+            <div class="layui-input-inline">
+                <input name="shanghu_name" value="{$Think.get.shanghu_name|default=''}" placeholder="请输入商户姓名" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item layui-inline">
+            <label class="layui-form-label">商户编号</label>
+            <div class="layui-input-inline">
+                <input name="machine_no" value="{$Think.get.machine_no|default=''}" placeholder="请输入商户编号" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item layui-inline">
+            <button class="layui-btn layui-btn-primary"><i class="layui-icon">&#xe615;</i> 搜 索</button>
+            <a href='{:url("excel/jijulist")}?shanghu_name={$Think.get.shanghu_name|default=""}&machine_no={$Think.get.machine_no|default=""}' class="layui-btn layui-btn-primary layui-select-disabled"><i class="layui-icon layui-icon-export"></i> 导 出</a>
+        </div>
+    </form>
+    <script>form.render()</script>
+</fieldset>
